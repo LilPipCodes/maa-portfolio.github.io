@@ -1,3 +1,34 @@
+// ================= PAGE LINK LOADING SCREEN =================
+document.addEventListener('DOMContentLoaded', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    // Only add if loading screen exists
+    if (loadingScreen) {
+        // Select project links
+        const projectLinks = document.querySelectorAll('a[href="solar-system.html"], a[href="rotoscoping.html"]');
+        projectLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Only show loader for left-click, no modifier keys
+                if (e.button === 0 && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+                    e.preventDefault();
+                    loadingScreen.classList.remove('hide');
+                    loadingScreen.style.display = 'flex';
+                    // Small delay for animation, then navigate
+                    setTimeout(() => {
+                        window.location.href = link.href;
+                    }, 350);
+                }
+            });
+        });
+    }
+});
+// ================= CUTE STAR LOADING SCREEN =================
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hide');
+        setTimeout(() => loadingScreen.style.display = 'none', 800);
+    }
+});
 // ================= PLANET AGE CALCULATOR DASHBOARD =================
 document.addEventListener('DOMContentLoaded', () => {
         // --- Planet Data ---
