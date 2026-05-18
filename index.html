@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LilPip | MMA Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="star.svg">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div id="stars-bg"></div>
+    <div id="header-placeholder"></div>
+    <main>
+        <!-- HERO (Centered / high-contrast) -->
+        <section class="hero-video" aria-label="Hero">
+            <video class="hero-video__bg" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
+                <source src="assets/videos/intro.webm" type="video/webm">
+                <source src="assets/videos/intro.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video__overlay" aria-hidden="true"></div>
+            <div class="container hero-video__content d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+                <div class="glass-card mx-auto p-5" style="max-width: 680px; border-radius: 2.8rem; background: rgba(40,0,60,0.60); box-shadow: 0 12px 80px 0 #a78bfa33, 0 2px 32px 0 #ff5ecb22; border: 2.5px solid rgba(167,139,250,0.22); backdrop-filter: blur(24px); position:relative; overflow:hidden;">
+                    <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+                        <div style="position:absolute;top:-60px;left:-60px;width:220px;height:220px;background:radial-gradient(circle at 40% 40%,#a78bfa88 0%,#ff5ecb00 80%);filter:blur(24px);"></div>
+                        <div style="position:absolute;bottom:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle at 60% 60%,#ff5ecb88 0%,#a78bfa00 80%);filter:blur(24px);"></div>
+                    </div>
+                    <div class="text-center mb-4 position-relative" style="z-index:1;">
+                        <span style="display:inline-block;padding:0.85em 2em;font-size:1.45rem;font-weight:800;color:#fff;background:linear-gradient(90deg,#a78bfa,#ff5ecb);border-radius:2.2em;box-shadow:0 2px 32px #a78bfa55,0 1.5px 16px #ff5ecb44;letter-spacing:0.01em;backdrop-filter:blur(2px);">
+                            Welcome to my Multimedia and Authoring Portfolio!(☆▽☆)
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <div class="pill mx-auto mb-3 position-relative" style="z-index:1;">
+                            <span class="pill__dot" aria-hidden="true"></span>
+                            <span class="text-white-50">TUP TAGUIG | BSIT-NS-2A</span>
+                        </div>
+                        <h1 class="hero-title fw-bold mb-3 position-relative" style="color: white; text-shadow: 0 2px 32px #a78bfa99, 0 2px 24px #ff5ecb55; font-size:3.2rem;line-height:1.08;z-index:1;">Hi I am Stef!</h1>
+                    </div>
+                    <p class="hero-subtitle mb-4 position-relative" style="font-size:1.22rem; color:rgba(255,255,255,0.93); text-shadow: 0 2px 16px #a78bfa77;z-index:1; font-weight:500; letter-spacing:0.01em;">
+                        I love crafting clean digital experiences through web design, animation, and 3D creativityヾ(•ω•`)o.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 mb-2 position-relative" style="z-index:1;">
+                        <a href="#projects" class="btn btn-hero px-4" style="background:linear-gradient(90deg,#a78bfa,#ff5ecb);color:#fff;font-weight:800;font-size:1.18rem;box-shadow:0 0 32px #a78bfa55,0 1.5px 16px #ff5ecb44;border:none;border-radius:2em;letter-spacing:0.01em;padding:0.7em 2.2em;transition:background 0.2s,box-shadow 0.2s;">View Work</a>
+                        <a href="#about" class="hero-ghost-link" style="font-size:1.13rem;font-weight:700;">About me <span aria-hidden="true">→</span></a>
+                    </div>
+                    <div class="tag-row mt-4 position-relative" style="z-index:1;">
+                        <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">Full-stack</span>
+                        <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">UI/UX</span>
+                        <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">3D</span>
+                        <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">Motion</span>
+                    </div>
+                </div>
+            </div>
+           
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="section-kicker">Selected Work</div>
+                    <h2 class="section-title mt-2 mb-3">Portfolio Projects</h2>
+                    <p class="text-white-50 mb-0" style="max-width: 70ch; margin: 0 auto; line-height: 1.9;">
+                        A collection of projects where I blend web development, motion, and visual storytelling to create experiences that feel polished, modern, and engaging—not just functional.
+                    </p>
+                </div>
+                <div class="row g-5 justify-content-center align-items-stretch">
+                    <!-- Solar System Project Card -->
+                    <div class="col-12 col-lg-5 d-flex">
+                        <a class="d-block text-decoration-none text-reset w-100 h-100" href="solar-system.html" aria-label="View 3D Solar System project">
+                            <article class="feature glass-card h-100 d-flex flex-column" style="border-radius: 2.2rem; background: rgba(40,0,60,0.55); box-shadow: 0 8px 48px 0 #a78bfa33, 0 2px 24px 0 #ff5ecb22; border: 2.5px solid rgba(167,139,250,0.18); backdrop-filter: blur(18px); transition: box-shadow .3s, transform .3s; overflow:hidden;">
+                                <div class="feature__media position-relative" style="overflow:hidden;">
+                                    <video class="preview-video" autoplay muted playsinline poster="assets/img/solar-system.jpg" style="border-radius: 1.5rem 1.5rem 0 0; width:100%; object-fit:cover; min-height:220px; max-height:260px; box-shadow:0 2px 32px #a78bfa33;">
+                                        <source src="assets/videos/solarsystem.webm" type="video/webm">
+                                        <source src="assets/videos/solar-system.mp4" type="video/mp4">
+                                    </video>
+                                    <span class="feature__badge position-absolute top-0 start-0 m-3 px-3 py-1" style="background:linear-gradient(90deg,#a78bfa,#ff5ecb);color:#fff;font-weight:700;border-radius:1em;font-size:1rem;box-shadow:0 2px 16px #a78bfa55;">3D / Blender</span>
+                                </div>
+                                <div class="feature__body flex-grow-1 d-flex flex-column justify-content-between p-4">
+                                    <div>
+                                        <h3 class="feature__title mb-2" style="color:white;font-weight:800;">3D Solar System</h3>
+                                        <div class="text-white-50 small mb-2">Lighting • Textures • Composition</div>
+                                        <p class="feature__desc mb-3" style="color:#e2d9ff;">A study in Blender rendering techniques emphasizing lifelike materials, precise lighting control, and rich atmospheric depth—crafted for a cinematic space documentary aesthetic.</p>
+                                    </div>
+                                    <div class="feature__actions mt-2">
+                                        <span class="btn btn-outline-ink px-4 py-2" style="background:rgba(167,139,250,0.13);color:#fff;font-weight:700;border-radius:1.2em;box-shadow:0 0 16px #a78bfa33;">View Project</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                    <!-- Rotoscoping Project Card -->
+                    <div class="col-12 col-lg-5 d-flex">
+                        <a href="rotoscoping.html" class="d-block text-decoration-none text-reset w-100 h-100">
+                            <article class="feature glass-card h-100 d-flex flex-column" style="border-radius: 2.2rem; background: rgba(40,0,60,0.55); box-shadow: 0 8px 48px 0 #ff5ecb33, 0 2px 24px 0 #a78bfa22; border: 2.5px solid rgba(255,94,203,0.18); backdrop-filter: blur(18px); transition: box-shadow .3s, transform .3s; overflow:hidden;">
+                                <div class="feature__media position-relative" style="overflow:hidden;">
+                                    <video class="preview-video" autoplay muted playsinline poster="assets/img/rotoscope-preview.jpg" style="border-radius: 1.5rem 1.5rem 0 0; width:100%; object-fit:cover; min-height:220px; max-height:260px; box-shadow:0 2px 32px #ff5ecb33;">
+                                        <source src="assets/videos/rotoscope-preview.webm" type="video/webm">
+                                        <source src="assets/videos/rotoscope-preview.mp4" type="video/mp4">
+                                    </video>
+                                    <span class="feature__badge position-absolute top-0 start-0 m-3 px-3 py-1" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);color:#fff;font-weight:700;border-radius:1em;font-size:1rem;box-shadow:0 2px 16px #ff5ecb55;">Video / Rotoscope</span>
+                                </div>
+                                <div class="feature__body flex-grow-1 d-flex flex-column justify-content-between p-4">
+                                    <div>
+                                        <h3 class="feature__title mb-2" style="color:white;font-weight:800;">1-Minute Video Rotoscope</h3>
+                                        <div class="text-white-50 small mb-2">Masking • Tracking • Cleanup</div>
+                                        <p class="feature__desc mb-3" style="color:#e2d9ff;">A hand-crafted rotoscoping workflow built on frame accuracy, steady tracking, and refined edges for smooth and realistic compositing output.</p>
+                                    </div>
+                                    <div class="feature__actions mt-2">
+                                        <span class="btn btn-outline-ink px-4 py-2" style="background:rgba(255,94,203,0.13);color:#fff;font-weight:700;border-radius:1.2em;box-shadow:0 0 16px #ff5ecb33;">View Project</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+                <div class="story-divider mt-5"><span>Next: Profile</span></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section section--profile">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="section-kicker">Profile</div>
+                    <h2 class="section-title mt-2 mb-2">About Me</h2>
+                    <p class="text-white-50 mb-0" style="max-width: 60ch; margin: 0 auto; line-height: 1.85;">
+                        A simple glimpse into my work, interests, and the creative things I enjoy exploring.(✿◡‿◡)
+                    </p>
+                </div>
+
+                <!-- Upgraded Profile Card -->
+                <div class="profile-card profile-card--purplefire glass-card p-4 p-md-5 mx-auto" style="border-radius: 2.5rem; background: rgba(40,0,60,0.55); box-shadow: 0 8px 64px 0 rgba(167,139,250,0.13), 0 1.5px 24px 0 rgba(255,94,203,0.10); border: 2px solid rgba(167,139,250,0.18); backdrop-filter: blur(18px); max-width: 680px; position:relative;">
+                    <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+                        <div style="position:absolute;top:-40px;left:-40px;width:120px;height:120px;background:radial-gradient(circle at 40% 40%,#a78bfa88 0%,#ff5ecb00 80%);filter:blur(18px);"></div>
+                        <div style="position:absolute;bottom:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle at 60% 60%,#ff5ecb88 0%,#a78bfa00 80%);filter:blur(18px);"></div>
+                    </div>
+                    <div class="d-flex align-items-center gap-4 mb-3 position-relative" style="z-index:1;">
+                        <div class="d-flex align-items-center justify-content-center" aria-hidden="true" style="background: rgba(167,139,250,0.13); border-radius: 1.5rem; width: 76px; height: 76px; box-shadow: 0 0 24px #a78bfa55; border: 2px solid rgba(167,139,250,0.18);">
+                            <img src="star.svg" alt="Avatar" style="width: 38px; height: 38px; filter: drop-shadow(0 0 12px #a78bfa88);">
+                        </div>
+                        <div>
+                            <div class="section-kicker mb-1" style="letter-spacing:0.13em;color:#bdaaff;font-weight:700;">STUDENT DEVELOPER</div>
+                            <h3 class="profile-title mb-2" style="color: white; text-shadow: 0 2px 12px #a78bfa55;font-size:2.1rem;font-weight:800;">Stefanie Mae G. Espinar</h3>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                <span class="profile-pill" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;"><i class="fa-solid fa-location-dot me-1"></i> Parañaque City</span>
+                                <span class="profile-pill" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;"><i class="fa-solid fa-school me-1"></i> TUP–Taguig</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="profile-bio mb-3 position-relative" style="color:#e2d9ff;font-size:1.15rem;z-index:1;">I love building digital experiences that are clean, intuitive, and a pleasure to use. <span style="color:#bdaaff;font-size:1.2em;">💜</span></p>
+                    <div class="d-flex flex-wrap gap-2 mb-4 position-relative" style="z-index:1;">
+                        <span class="profile-tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;"><i class="fa-solid fa-code me-1"></i> Web</span>
+                        <span class="profile-tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;"><i class="fa-solid fa-object-group me-1"></i> UI/UX</span>
+                        <span class="profile-tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;"><i class="fa-solid fa-cube me-1"></i> 3D</span>
+                        <span class="profile-tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;"><i class="fa-solid fa-wave-square me-1"></i> Motion</span>
+                    </div>
+                    <div class="row g-3 mb-4 position-relative" style="z-index:1;">
+                        <div class="col-12 col-md-6">
+                            <div class="glass-card h-100 p-3" style="background:rgba(167,139,250,0.10);border-radius:1.2rem;">
+                                <div class="fw-bold mb-1" style="color:#fff;"><i class="fa-solid fa-globe me-2"></i>Web Dev</div>
+                                <div style="color:#bdaaff;">I build responsive websites with clean code and smooth performance.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="glass-card h-100 p-3" style="background:rgba(167,139,250,0.10);border-radius:1.2rem;">
+                                <div class="fw-bold mb-1" style="color:#fff;"><i class="fa-solid fa-gamepad me-2"></i>UI/UX</div>
+                                <div style="color:#bdaaff;">I design user-friendly interfaces with clear hierarchy and great flow.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="glass-card h-100 p-3" style="background:rgba(167,139,250,0.10);border-radius:1.2rem;">
+                                <div class="fw-bold mb-1" style="color:#fff;"><i class="fa-solid fa-cube me-2"></i>3D</div>
+                                <div style="color:#bdaaff;">I create 3D visuals and scenes that add depth and bring ideas to life.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="glass-card h-100 p-3" style="background:rgba(167,139,250,0.10);border-radius:1.2rem;">
+                                <div class="fw-bold mb-1" style="color:#fff;"><i class="fa-solid fa-clapperboard me-2"></i>Motion</div>
+                                <div style="color:#bdaaff;">I add smooth animations and transitions that make experiences feel alive.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 mb-3 position-relative" style="z-index:1;">
+                        <div class="col-12 col-md-4">
+                            <div class="glass-card h-100 p-3 text-center" style="background:rgba(167,139,250,0.10);border-radius:1.2rem;">
+                                <div class="mb-1" style="color:#bdaaff;font-size:1.5em;"><i class="fa-solid fa-star"></i></div>
+                                <div class="fw-bold" style="color:#fff;">Detail-Oriented</div>
+                                <div style="color:#bdaaff;font-size:0.98em;">I care about the little things that make a big difference.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="glass-card h-100 p-3 text-center" style="background:rgba(167,139,250,0.10);border-radius:1.2rem;">
+                                <div class="mb-1" style="color:#bdaaff;font-size:1.5em;"><i class="fa-solid fa-lightbulb"></i></div>
+                                <div class="fw-bold" style="color:#fff;">Always Learning</div>
+                                <div style="color:#bdaaff;font-size:0.98em;">I'm always exploring new tools and ideas to grow.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="glass-card h-100 p-3 text-center" style="background:rgba(167,139,250,0.10);border-radius:1.2rem;">
+                                <div class="mb-1" style="color:#bdaaff;font-size:1.5em;"><i class="fa-solid fa-users"></i></div>
+                                <div class="fw-bold" style="color:#fff;">Collaborative</div>
+                                <div style="color:#bdaaff;font-size:0.98em;">I enjoy working with others and turning ideas into reality.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 position-relative" style="z-index:1;">
+                        <span style="color:#bdaaff;font-size:1.1em;letter-spacing:0.01em;"><i class="fa-solid fa-sparkles"></i> Let's create something meaningful together. <span style="font-size:1.2em;">(☆▽☆)</span></span>
+                    </div>
+                </div>
+
+                <div class="story-divider"><span>Next: About the Course</span></div>
+            </div>
+        </section>
+
+        <!-- TECH STACK -->
+        <section id="tech-stack" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="section-kicker">Subject Portfolio</div>
+                    <h2 class="section-title mt-2 mb-3">Multimedia and Authoring</h2>
+                    <p class="text-white-50 mb-0" style="max-width: 70ch; margin: 0 auto; line-height: 1.9;">
+                        This portfolio is created for the subject <b>Multimedia and Authoring</b> (BSIT-NS-2A). The course covers the fundamentals of multimedia systems, authoring tools, and creative digital content production. Here you’ll find my projects, skills, and reflections as a student in this course.
+                    </p>
+                </div>
+                <div class="row justify-content-center g-4">
+                    <div class="col-12 col-lg-10">
+                        <div class="glass-card p-4 p-md-5" style="border-radius:2.5rem;">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="assets/stef.png" alt="Profile" class="rounded-circle shadow" style="width: 160px; height: 160px; object-fit: cover; border: 4px solid #a78bfa; box-shadow: 0 0 32px #ff5ecb44;">
+                                    <div class="mt-3">
+                                        <span class="badge bg-gradient" style="background: linear-gradient(90deg,#a78bfa,#ff5ecb);color:#fff;font-size:1rem;">Stefanie Mae G. Espinar</span>
+                                    </div>
+                                    <div class="mt-2 text-white-50">BSIT-NS-2A<br>Parañaque City</div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h3 class="mb-3" style="color:white;">About the Course</h3>
+                                    <p class="mb-2 text-white-50">Multimedia and Authoring explores the creation, integration, and delivery of digital content using modern tools and techniques. Topics include web development, interactive media, graphics, video, and user experience design. The course emphasizes creativity, technical skills, and real-world application.</p>
+                                    <h4 class="mt-4 mb-2" style="color:white;">Technologies & Software I Know and Learn</h4>
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item m-2"><img src="assets/logos/blender.svg" alt="Blender" style="width:40px;"> <span class="tech-label">Blender</span></li>
+                                        <li class="list-inline-item m-2"><img src="assets/logos/after-effects.svg" alt="After Effects" style="width:40px;"> <span class="tech-label">After Effects</span></li>
+                                        <li class="list-inline-item m-2"><img src="assets/logos/javascript.svg" alt="JavaScript" style="width:40px;"> <span class="tech-label">JavaScript</span></li>
+                                        <li class="list-inline-item m-2"><img src="assets/logos/python.svg" alt="Python" style="width:40px;"> <span class="tech-label">Python</span></li>
+                                        <li class="list-inline-item m-2"><img src="assets/logos/php.svg" alt="PHP" style="width:40px;"> <span class="tech-label">PHP</span></li>
+                                        <li class="list-inline-item m-2"><img src="assets/logos/mysql.svg" alt="MySQL" style="width:40px;"> <span class="tech-label">MySQL</span></li>
+                                        <li class="list-inline-item m-2"><img src="assets/logos/laravel.svg" alt="Laravel" style="width:40px;"> <span class="tech-label">Laravel</span></li>
+                                        <li class="list-inline-item m-2"><img src="assets/logos/cpp.svg" alt="C++" style="width:40px;"> <span class="tech-label">C++</span></li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <p class="mb-0 text-white-50">This portfolio demonstrates my learning journey and creative outputs in Multimedia and Authoring.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-divider"><span>Next: Contact</span></div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="section-kicker">Contacts</div>
+                    <h2 class="section-title mt-2 mb-3">Connect with Me!</h2>
+                </div>
+                <div class="row justify-content-center g-4">
+                    <div class="col-12 col-lg-10">
+                        <div class="glass-card p-4 p-md-5" style="border-radius:2.5rem;">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-md-5 text-center text-md-start">
+                                    <div class="section-kicker mb-2">Work together?</div>
+                                    <div class="profile-title mb-2" style="font-size:2.1rem;font-weight:900;color:white;text-shadow:0 2px 12px #a78bfa55;">Open for Partnerships & Creative Work</div>
+                                    <p class="profile-bio mb-2" style="color: white;">
+                                        Always open to new opportunities, creative partnerships, and good conversations.
+                                    </p>
+                                    <span class="profile-tag profile-tag--blue">Available for web, design & collabs</span>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="row g-3">
+                                        <div class="col-12 col-md-6 col-lg-6 mb-3 mb-md-0">
+                                            <div class="glass-card h-100 d-flex flex-column justify-content-between align-items-start p-4" style="border-radius:1.5rem;min-height:180px;box-shadow:0 0 32px #a78bfa33,0 0 16px #ff5ecb33;">
+                                                <div>
+                                                    <div class="section-kicker mb-2" style="color:#ff5ecb;font-size:1.05em;letter-spacing:0.08em;">Email</div>
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <div class="contact-info-icon me-3" style="font-size:2.2rem;color:#fff;background:linear-gradient(135deg,#a78bfa 40%,#ff5ecb 100%);border-radius:1.2rem;padding:12px 16px 10px 16px;box-shadow:0 0 18px #a78bfa55;"><i class="fa-solid fa-envelope"></i></div>
+                                                        <div style="min-width:0;">
+                                                            <div class="fw-bold" style="font-size:1.07em;color:white;word-break:break-all;line-height:1.3;">stefaniemae.espinar17@gmail.com</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="mailto:aniemae.espinar17@gmail.com" class="btn btn-glow w-100 mt-2" style="background:linear-gradient(90deg,#a78bfa,#ff5ecb);color:#fff;font-weight:700;border-radius:2em;padding:0.7em 1.5em;box-shadow:0 0 16px #a78bfa55,0 0 8px #ff5ecb44;transition:background 0.2s,box-shadow 0.2s;display:flex;align-items:center;justify-content:center;gap:0.7em;">
+                                                    Send an email <span style="font-size:1.2em;">→</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6 mb-3 mb-md-0">
+                                            <div class="glass-card h-100 d-flex flex-column justify-content-between align-items-start p-4" style="border-radius:1.5rem;min-height:180px;box-shadow:0 0 32px #ff5ecb33,0 0 16px #a78bfa33;">
+                                                <div>
+                                                    <div class="section-kicker mb-2" style="color:#a78bfa;font-size:1.05em;letter-spacing:0.08em;">Location</div>
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <div class="contact-info-icon me-3" style="font-size:2.2rem;color:#fff;background:linear-gradient(135deg,#ff5ecb 40%,#a78bfa 100%);border-radius:1.2rem;padding:12px 16px 10px 16px;box-shadow:0 0 18px #ff5ecb55;"><i class="fa-solid fa-location-dot"></i></div>
+                                                        <div>
+                                                            <div class="fw-bold" style="font-size:1.18em;color:white;">Parañaque City</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="https://maps.google.com/?q=Parañaque+City" target="_blank" class="btn btn-glow w-100 mt-2" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);color:#fff;font-weight:700;border-radius:2em;padding:0.7em 1.5em;box-shadow:0 0 16px #ff5ecb55,0 0 8px #a78bfa44;transition:background 0.2s,box-shadow 0.2s;display:flex;align-items:center;justify-content:center;gap:0.7em;">
+                                                    View on map <span style="font-size:1.2em;">→</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <div class="glass-card h-100 d-flex flex-column flex-md-row align-items-center justify-content-between p-4" style="border-radius:1.5rem;box-shadow:0 0 32px #a78bfa33,0 0 16px #ff5ecb33;">
+                                                <div class="d-flex align-items-center mb-2 mb-md-0">
+                                                    <div class="contact-info-icon me-3" style="font-size:2.2rem;color:#fff;background:linear-gradient(135deg,#a78bfa 40%,#ff5ecb 100%);border-radius:1.2rem;padding:12px 16px 10px 16px;box-shadow:0 0 18px #a78bfa55;"><i class="fa-solid fa-graduation-cap"></i></div>
+                                                    <div>
+                                                        <div class="fw-bold" style="font-size:1.18em;color:white;">Currently</div>
+                                                        <div class="contact-info-sub small" style="color:#bdaaff;">TUP-Taguig • Student</div>
+                                                    </div>
+                                                </div>
+                                                <a href="#about" class="btn btn-glow mt-2 mt-md-0" style="background:linear-gradient(90deg,#a78bfa,#ff5ecb);color:#fff;font-weight:700;border-radius:2em;padding:0.7em 1.5em;box-shadow:0 0 16px #a78bfa55,0 0 8px #ff5ecb44;transition:background 0.2s,box-shadow 0.2s;display:flex;align-items:center;justify-content:center;gap:0.7em;">
+                                                    Learn more <span style="font-size:1.2em;">→</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-divider"><span>End of page</span></div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+        <div class="text-center mt-4 mb-2">
+            <small style="color:rgba(255,255,255,0.45);font-size:1rem;letter-spacing:.04em;">This website is for educational purposes only.</small>
+        </div>
+    <script>
+        // Starfield background generator
+        const STAR_COUNT = 90;
+        const starsBg = document.getElementById('stars-bg');
+        function randomBetween(a, b) { return a + Math.random() * (b - a); }
+        for (let i = 0; i < STAR_COUNT; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = randomBetween(1.5, 3.7);
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${randomBetween(0, 100)}vh`;
+            star.style.left = `${randomBetween(0, 100)}vw`;
+            star.style.animationDelay = `${randomBetween(0, 2.5)}s`;
+            starsBg.appendChild(star);
+        }
+        // Custom star cursor
+        const cursorUrl = 'star.svg';
+        document.body.style.cursor = `url(${cursorUrl}) 16 16, auto`;
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+        document.head.appendChild(link);
+        var faLink = document.createElement('link');
+        faLink.rel = 'stylesheet';
+        faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+        document.head.appendChild(faLink);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="scripts/main.js"></script>
+        <script>
+        // Ensure preview videos play fully before looping
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.preview-video').forEach(function(video) {
+                video.addEventListener('ended', function() {
+                    video.currentTime = 0;
+                    video.play();
+                });
+            });
+        });
+        </script>
+</body>
+</html>

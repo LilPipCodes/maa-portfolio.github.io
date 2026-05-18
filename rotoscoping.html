@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LilPip | Rotoscoping </title>
+    <link rel="icon" type="image/svg+xml" href="star.svg">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div id="stars-bg"></div>
+    <div id="header-placeholder"></div>
+    <div class="spacer"></div>
+    <main>
+              
+        <section class="hero-video section" aria-label="Rotoscoping Hero">
+            <div class="container hero-video__content d-flex align-items-center justify-content-center" style="min-height: 60vh;">
+                <div class="glass-card mx-auto p-5 w-100" style="border-radius: 2.8rem; background: rgba(40,0,60,0.62); box-shadow: 0 12px 80px 0 #a78bfa33, 0 2px 32px 0 #4A90E244; border: 2.5px solid rgba(167,139,250,0.22); backdrop-filter: blur(24px); position:relative; overflow:hidden;">
+                    <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+                        <div style="position:absolute;top:-60px;left:-60px;width:220px;height:220px;background:radial-gradient(circle at 40% 40%,#a78bfa88 0%,#4A90E200 80%);filter:blur(24px);"></div>
+                        <div style="position:absolute;bottom:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle at 60% 60%,#4A90E288 0%,#a78bfa00 80%);filter:blur(24px);"></div>
+                    </div>
+                    <div class="text-center mb-4 position-relative" style="z-index:1;">
+                        <span style="display:inline-block;padding:0.85em 2em;font-size:1.45rem;font-weight:800;color:#fff;background:linear-gradient(90deg,#a78bfa,#4A90E2);border-radius:2.2em;box-shadow:0 2px 32px #a78bfa55,0 1.5px 16px #4A90E244;letter-spacing:0.01em;backdrop-filter:blur(2px);">
+                            ROTOSCOPE
+                        </span>
+                    </div>
+                    <div class="text-center mb-3 position-relative" style="z-index:1;">
+                        <p class="mb-2" style="color:#e2d9ff;font-size:1.13rem;">Video rotoscoping is a technique where artists trace over footage frame by frame to isolate subjects or create visual effects. It's commonly used for background removal, motion tracking, and stylized animation.</p>
+                        <div class="mb-2">
+                            <div class="text-center mb-2">
+                                <span style="display:inline-block;padding:0.45em 1.5em;font-size:1.08rem;font-weight:800;color:#fff;background:linear-gradient(90deg,#a78bfa,#ff5ecb);border-radius:1.5em;box-shadow:0 2px 16px #a78bfa44,0 1.5px 8px #ff5ecb33;letter-spacing:0.01em;backdrop-filter:blur(2px);">
+                                    Tools / Softwares Used for this Project
+                                </span>
+                            </div>
+                            <div class="d-flex flex-wrap justify-content-center gap-2">
+                                <span class="profile-tag" style="background:linear-gradient(90deg,#a78bfa22,#ff5ecb22);color:#fff;font-weight:700;padding:0.55em 1.3em;border-radius:1.2em;font-size:1.01em;box-shadow:0 0 8px #a78bfa33,0 0 4px #ff5ecb22;"><i class="fa-brands fa-adobe me-1"></i> Adobe After Effects</span>
+                                <span class="profile-tag" style="background:linear-gradient(90deg,#a78bfa22,#ff5ecb22);color:#fff;font-weight:700;padding:0.55em 1.3em;border-radius:1.2em;font-size:1.01em;box-shadow:0 0 8px #a78bfa33,0 0 4px #ff5ecb22;"><i class="fa-brands fa-adobe me-1"></i> Adobe Premiere Pro</span>
+                                    <span class="profile-tag" style="background:linear-gradient(90deg,#a78bfa22,#ff5ecb22);color:#fff;font-weight:700;padding:0.55em 1.3em;border-radius:1.2em;font-size:1.01em;box-shadow:0 0 8px #a78bfa33,0 0 4px #ff5ecb22;"><i class="fa-solid fa-scissors me-1"></i> CapCut</span>
+                                    <span class="profile-tag" style="background:linear-gradient(90deg,#a78bfa22,#ff5ecb22);color:#fff;font-weight:700;padding:0.55em 1.3em;border-radius:1.2em;font-size:1.01em;box-shadow:0 0 8px #a78bfa33,0 0 4px #ff5ecb22;"><i class="fa-solid fa-paint-brush me-1"></i> IbisPaint</span>
+                            </div>
+                        </div>
+                        <div class="mb-3" style="color:#bdaaff;font-size:1.05em;">Tools and techniques: After Effects for frame-by-frame animation, Premiere Pro for editing, and Capcut for quick adjustments.</div>
+                        <a href="https://youtu.be/FFHGd9VMPgI" target="_blank" class="btn btn-hero px-4" style="background:linear-gradient(90deg,#a78bfa,#4A90E2);color:#fff;font-weight:800;font-size:1.08rem;box-shadow:0 0 32px #a78bfa55,0 1.5px 16px #4A90E244;border:none;border-radius:2em;letter-spacing:0.01em;padding:0.7em 2.2em;transition:background 0.2s,box-shadow 0.2s;">View Source Video <i class="fa-brands fa-youtube ms-2"></i></a>
+                    </div>
+                    <div class="text-center">
+                        <h1 class="hero-title fw-bold mb-3 position-relative" style="color: white; text-shadow: 0 2px 32px #a78bfa99, 0 2px 24px #4A90E255; font-size:2.2rem;line-height:1.08;z-index:1;">Precision Masking & Subject Isolation</h1>
+                        <p class="hero-subtitle mb-4 position-relative" style="font-size:1.22rem; color:rgba(255,255,255,0.93); text-shadow: 0 2px 16px #a78bfa77;z-index:1; font-weight:500; letter-spacing:0.01em;">
+                            A technical deep-dive into <strong>frame-by-frame rotoscoping</strong>, demonstrating precision masking and subject isolation techniques.
+                        </p>
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 mb-2 position-relative" style="z-index:1;">
+                        <a href="index.html" class="btn btn-hero px-4" style="background:linear-gradient(90deg,#a78bfa,#4A90E2);color:#fff;font-weight:800;font-size:1.18rem;box-shadow:0 0 32px #a78bfa55,0 1.5px 16px #4A90E244;border:none;border-radius:2em;letter-spacing:0.01em;padding:0.7em 2.2em;transition:background 0.2s,box-shadow 0.2s;">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+                        </a>
+                    </div>
+                    <div class="tag-row mt-4 position-relative" style="z-index:1;">
+                        <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">Video</span>
+                        <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">Rotoscope</span>
+                        <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">Compositing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:rgba(20,10,40,0.72);border-radius:2.5rem;box-shadow:0 0 64px #a78bfa22,0 0 32px #ff5ecb22;margin-bottom:3rem;">
+            <div class="container">
+                <div class="section-kicker mb-2" style="color:#bdaaff;font-size:1.1em;letter-spacing:0.13em;font-weight:900;text-transform:uppercase;">Workflow</div>
+                <h2 class="section-title mb-2" style="font-size:2.5rem;font-weight:900;background:linear-gradient(90deg,#a78bfa,#ff5ecb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Production Process</h2>
+                <div class="mb-4" style="color:#bdaaff;font-size:1.18em;max-width:520px;">Here's a simple step by step guide on how I accomplised my rotoscoping project.</div>
+                <div class="row g-4 justify-content-center">
+
+        <section class="section">
+            <div class="container">
+                <div class="d-flex flex-wrap gap-3 justify-content-center w-100" style="justify-content:center;">
+                <!-- Step 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;min-width:270px;max-width:370px;margin-left:auto;margin-right:auto;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                            <span style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #ff5ecb77;">1</span>
+                        </div>
+                        <img src="assets/Rotoscope/step1.jpg" alt="Source Material Screenshot" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #a78bfa55;">
+                        <div style="font-weight:700;color:#e2d9ff;font-size:1.1em;">Select Source Material</div>
+                        <div style="color:#e2d9ff;font-size:0.98em;">Choose high-quality video with clear subject-background contrast and interesting movement patterns.<br><br><strong>Source Material Used:</strong><br>
+                            <a href="https://youtu.be/jO2viLEW-1A?si=vdFKobRiZdVOBR9W" target="_blank" rel="noopener" class="btn btn-hero px-4 mt-2" style="background:linear-gradient(90deg,#a78bfa,#4A90E2);color:#fff;font-weight:800;font-size:1.01rem;box-shadow:0 0 24px #a78bfa55,0 1.5px 12px #4A90E244;border:none;border-radius:2em;letter-spacing:0.01em;padding:0.6em 1.7em;transition:background 0.2s,box-shadow 0.2s;display:inline-block;">
+                                <i class="fa-brands fa-youtube me-2"></i>Watch Source Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #ff5ecb77,0 0 16px #a78bfa77;border:2.5px solid #ff5ecb;min-width:270px;max-width:370px;margin-left:auto;margin-right:auto;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                            <span style="background:linear-gradient(135deg,#ff5ecb,#a78bfa);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #a78bfa77;">2</span>
+                        </div>
+                        <img src="assets/Rotoscope/step2.png" alt="Step 2" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #ff5ecb55;">
+                        <div style="font-weight:700;color:#e2d9ff;font-size:1.1em;">Cut the Video into 5-Second Clips</div>
+                        <div style="color:#e2d9ff;font-size:0.98em;">Use CapCut to split the selected video into 5-second segments for easier editing.</div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;min-width:270px;max-width:370px;margin-left:auto;margin-right:auto;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                            <span style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #ff5ecb77;">3</span>
+                        </div>
+                        <img src="assets/Rotoscope/step3.png" alt="Step 3" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #a78bfa55;">
+                        <div style="font-weight:700;color:#e2d9ff;font-size:1.1em;">Create a New Composition</div>
+                        <div style="color:#e2d9ff;font-size:0.98em;">In After Effects, create a separate 5-second composition for each clip segment.</div>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #ff5ecb77,0 0 16px #a78bfa77;border:2.5px solid #ff5ecb;min-width:270px;max-width:370px;margin-left:auto;margin-right:auto;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                            <span style="background:linear-gradient(135deg,#ff5ecb,#a78bfa);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #a78bfa77;">4</span>
+                        </div>
+                        <img src="assets/Rotoscope/step4.png" alt="Step 4" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #ff5ecb55;">
+                        <div style="font-weight:700;color:#e2d9ff;font-size:1.1em;">Trace Each Layer</div>
+                        <div style="color:#e2d9ff;font-size:0.98em;">Isolate the subject into separate layers (shirt, pants, body, hair, shoes) using the Roto Brush Tool. Freeze each layer to edit others independently.</div>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;min-width:270px;max-width:370px;margin-left:auto;margin-right:auto;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                            <span style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #ff5ecb77;">5</span>
+                        </div>
+                        <img src="assets/Rotoscope/step5.png" alt="Step 5" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #a78bfa55;">
+                        <div style="font-weight:700;color:#e2d9ff;font-size:1.1em;">Add Fill Colors to Layers</div>
+                        <div style="color:#e2d9ff;font-size:0.98em;">Apply solid color fills to each isolated layer (shirt, pants, hair, etc.) to prepare for stylization.</div>
+                    </div>
+                </div>
+                <!-- Step 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #ff5ecb77,0 0 16px #a78bfa77;border:2.5px solid #ff5ecb;min-width:270px;max-width:370px;margin-left:auto;margin-right:auto;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                            <span style="background:linear-gradient(135deg,#ff5ecb,#a78bfa);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #a78bfa77;">6</span>
+                        </div>
+                        <img src="assets/Rotoscope/step6.png" alt="Step 6" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #ff5ecb55;">
+                        <div style="font-weight:700;color:#e2d9ff;font-size:1.1em;">Render All Compositions</div>
+                        <div style="color:#e2d9ff;font-size:0.98em;">Export each 5 second composition through the Render Queue with consistent settings.</div>
+                    </div>
+                </div>
+                <!-- Step 7 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;min-width:270px;max-width:370px;margin-left:auto;margin-right:auto;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                            <span style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #ff5ecb77;">7</span>
+                        </div>
+                        <img src="assets/Rotoscope/step7.png" alt="Step 7" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #a78bfa55;">
+                        <div style="font-weight:700;color:#e2d9ff;font-size:1.1em;">Compile All 5-Second Clips</div>
+                        <div style="color:#e2d9ff;font-size:0.98em;">Combine all clips in CapCut, add audio, and export in mp4 format.</div>
+                    </div>
+                </div>
+                <!-- Step 8 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #ff5ecb77,0 0 16px #a78bfa77;border:2.5px solid #ff5ecb;min-width:270px;max-width:370px;margin-left:auto;margin-right:auto;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                            <span style="background:linear-gradient(135deg,#ff5ecb,#a78bfa);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #a78bfa77;">8</span>
+                        </div>
+                        <img src="assets/Rotoscope/step8.png" alt="Step 8" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #ff5ecb55;">
+                        <div style="font-weight:700;color:#e2d9ff;font-size:1.1em;">Edit Lyrics & Background</div>
+                        <div style="color:#e2d9ff;font-size:0.98em;">Use Adobe Premiere Pro to add lyrics, sync them with the audio, and change background colors to enhance visual appeal.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:rgba(20,10,40,0.72);border-radius:2.5rem;box-shadow:0 0 64px #a78bfa22,0 0 32px #ff5ecb22;">
+            <div class="container">
+                <div class="section-kicker mb-2" style="color:#bdaaff;font-size:1.1em;letter-spacing:0.13em;font-weight:900;text-transform:uppercase;">Progress Timeline</div>
+                <h3 class="section-title mb-4" style="font-size:2.1rem;font-weight:900;background:linear-gradient(90deg,#a78bfa,#ff5ecb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Week 1 - 12</h3>
+                <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/2ob02C0HsTo" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 1</h6>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/kgLzSe_XXVs" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 2</h6>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/wIx7ORCeTnY" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 3</h6>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/Hs6ABV1003M" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 4</h6>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/-C9wDgs1--A" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 5</h6>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/J060GggPR1M" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 6</h6>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/LkHS5NHEAIE" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 7</h6>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/nLjCy7DUvx8" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 8</h6>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100">
+                        <div class="ratio ratio-16x9 mb-2">
+                        <iframe src="https://www.youtube.com/embed/lFEFijlqf7E" allowfullscreen></iframe>
+                        </div>
+                        <h6 class="text-white px-2 mt-2">Week 9</h6>
+                    </div>
+                </div>
+                <!-- Weeks 10-12 left blank -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100 d-flex align-items-center justify-content-center" style="min-height: 120px;">
+                        <span class="text-white-50">Week 10</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100 d-flex align-items-center justify-content-center" style="min-height: 120px;">
+                        <span class="text-white-50">Week 11</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-2 h-100 d-flex align-items-center justify-content-center" style="min-height: 120px;">
+                        <span class="text-white-50">Week 12</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Final Output Section -->
+                <section id="final-output" class="section position-relative overflow-hidden" aria-label="Final Rotoscoping Output">
+                    <div class="container floatup visible position-relative">
+                        <div class="final-render-bg-glow position-absolute top-0 start-50 translate-middle-x w-100 h-100" style="z-index:0;pointer-events:none;"></div>
+                        <div class="text-center max-w-2xl mx-auto mb-5 position-relative z-2">
+                            <h2 class="section-title fw-bold mb-3" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:2.7rem;letter-spacing:0.01em;">Final Output</h2>
+                        </div>
+                        <div class="row justify-content-center position-relative z-2">
+                            <div class="col-12 col-xl-11">
+                                <div class="glass-card p-0 render-mockup-frame" style="background:rgba(30,20,50,0.98);border-radius:1.7rem;box-shadow:0 0 48px #a78bfa99,0 0 24px #ff5ecb99;border:2.5px solid #a78bfa;overflow:hidden;">
+                                    <div class="deck-header d-flex align-items-center justify-content-between px-4 pt-3 pb-2" style="background:rgba(80,40,120,0.18);border-top-left-radius:1.7rem;border-top-right-radius:1.7rem;">
+                                        <div class="deck-dots d-flex gap-2">
+                                            <span class="dot-red" style="background:#ff5e5e;width:12px;height:12px;border-radius:50%;box-shadow:0 0 6px #ff5e5e77;"></span>
+                                            <span class="dot-amber" style="background:#ffd966;width:12px;height:12px;border-radius:50%;box-shadow:0 0 6px #ffd96677;"></span>
+                                            <span class="dot-green" style="background:#7cffb2;width:12px;height:12px;border-radius:50%;box-shadow:0 0 6px #7cffb277;"></span>
+                                        </div>
+                                        <div class="deck-title text-white-50 small font-monospace">rotoscoping_final_output.mp4</div>
+                                        <div class="deck-badge small font-monospace" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);color:#fff;padding:0.2em 0.9em;border-radius:1em;box-shadow:0 0 8px #ff5ecb77;">1080p HD</div>
+                                    </div>
+                                    <div class="ratio ratio-16x9 position-relative" style="background:radial-gradient(ellipse at 60% 40%,#a78bfa22 0%,#ff5ecb11 100%);">
+                                        <video 
+                                            class="render-native-player" 
+                                            controls 
+                                            preload="metadata" 
+                                            poster="assets/Rotoscope/final-thumb.jpg"
+                                            style="border-radius:1.1rem;box-shadow:0 0 24px #ff5ecb33;">
+                                            <source src="assets/Rotoscope/final-output.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="render-progress-bar w-100" style="height:6px;background:linear-gradient(90deg,#a78bfa,#ff5ecb);box-shadow:0 0 12px #ff5ecb77;opacity:0.7;"></div>
+                                    <div class="row g-3 m-0 py-3 font-monospace text-white-50 small justify-content-between align-items-center" style="background:rgba(80,40,120,0.10);">
+                                        <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                                            <i class="fa-solid fa-scissors" style="color: #ff5ecb"></i>
+                                            <span>Software: <span style="color:#a78bfa">After Effects | Capcut | IbisPaint</span></span>
+                                        </div>
+                                        <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                                            <i class="fa-solid fa-layer-group" style="color: #a78bfa"></i>
+                                            <span>Layers: <span style="color:#ff5ecb">5+ Isolated</span></span>
+                                        </div>
+                                        <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                                            <i class="fa-solid fa-palette" style="color: #ff5ecb"></i>
+                                            <span>Stylization: <span style="color:#a78bfa">Color Fill</span></span>
+                                        </div>
+                                        <div class="col-6 col-md-3 d-flex align-items-center gap-2 justify-content-md-end">
+                                            <i class="fa-solid fa-film" style="color: #a78bfa"></i>
+                                            <span><span style="color:#ff5ecb">30 FPS</span> True Motion</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+        document.head.appendChild(link);
+
+        var faLink = document.createElement('link');
+        faLink.rel = 'stylesheet';
+        faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+        document.head.appendChild(faLink);
+    </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="scripts/main.js"></script>
+        <script>
+        // Starfield background animation (from index.html)
+        function createStars(numStars = 80) {
+            const starsBg = document.getElementById('stars-bg');
+            if (!starsBg) return;
+            starsBg.innerHTML = '';
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 2.2 + 1.2;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.opacity = 0.7 + Math.random() * 0.3;
+                star.style.animationDuration = `${2 + Math.random() * 2.5}s`;
+                starsBg.appendChild(star);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', () => createStars());
+        window.addEventListener('resize', () => createStars());
+        </script>
+</body>
+</html>

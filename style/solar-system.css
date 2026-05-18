@@ -1,0 +1,1020 @@
+/* Planet Card Video Styling (Dashboard) */
+/* Planet Card Video Styling (Show full video, no crop) */
+.planet-card-video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 1.1rem;
+    box-shadow: 0 0 16px #a78bfa44;
+    margin-bottom: 1.1rem;
+    background: #0a0a1a;
+}
+.planet-card-video video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 1.1rem;
+    background: #0a0a1a;
+    display: block;
+}
+/* ===================== PLANET AGE CALCULATOR DASHBOARD ===================== */
+.planet-calc-hero {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(20,10,40,0.98);
+    border-radius: 2.2rem;
+    box-shadow: 0 8px 32px #a78bfa33, 0 1.5px 16px #ff5ecb22;
+    border: 2.5px solid rgba(167,139,250,0.18);
+    backdrop-filter: blur(18px);
+    padding: 2.2rem 1.5rem 1.2rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.planet-card-grid {
+    margin-top: 0.5rem;
+}
+
+.planet-card {
+    background: rgba(30,20,50,0.98);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 32px #a78bfa77, 0 0 16px #ff5ecb77;
+    border: 2.5px solid #a78bfa;
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+.planet-card:hover {
+    box-shadow: 0 0 48px #ff5ecb99, 0 0 24px #a78bfa99;
+    border-color: #ff5ecb;
+}
+.planet-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+}
+.planet-card-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.01em;
+}
+.planet-badge {
+    display: inline-block;
+    font-size: 0.98rem;
+    font-weight: 700;
+    padding: 0.32em 1.1em;
+    border-radius: 1.2em;
+    color: #fff;
+    box-shadow: 0 2px 12px #a78bfa44;
+    letter-spacing: 0.01em;
+}
+.badge-inner { background: linear-gradient(90deg,#a78bfa,#4A90E2); }
+.badge-featured { background: linear-gradient(90deg,#ff5ecb,#a78bfa); }
+.badge-gas { background: linear-gradient(90deg,#4A90E2,#a78bfa); }
+.badge-outer { background: linear-gradient(90deg,#a78bfa,#ff5ecb); }
+.badge-moon { background: linear-gradient(90deg,#e2d9ff,#a78bfa); color:#4A90E2; }
+
+.planet-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7em 1.2em;
+    margin-bottom: 1.1rem;
+}
+.metric-label {
+    font-size: 0.98rem;
+    color: #a78bfa;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+.metric-value {
+    font-size: 1.18rem;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.1em;
+}
+.planet-desc {
+    font-size: 0.98rem;
+    color: #e2d9ff;
+    opacity: 0.85;
+    margin-top: auto;
+}
+
+@media (max-width: 991px) {
+    .planet-card-grid { row-gap: 2rem; }
+}
+@media (max-width: 767px) {
+    .planet-card-grid { row-gap: 1.2rem; }
+    .planet-card { padding: 1.3rem 1rem 1rem 1rem; }
+    .planet-card-title { font-size: 1.18rem; }
+}
+/* ==========================================================================
+   DIVIDERS
+   ========================================================================== */
+.panel-break {
+  width: 100%;
+  height: 50px;
+  margin: 0 auto -10px auto;
+  background: repeating-linear-gradient(-10deg,#2b3955 0 6px,#20263b 7px 13px,#4da3ff11 14px 23px);
+  /* Faked “dots” with SVG overlay */
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
+  mask-size: 260px 50px; mask-repeat: no-repeat;
+  -webkit-mask-size: 260px 50px;
+}
+
+/* Right-aligned variant */
+.panel-break--right {
+    width: 260px; /* match mask-size for clean edges */
+    height: 50px;
+    margin: 0 0 -10px auto; /* push to right */
+    background: repeating-linear-gradient(-10deg,#2b3955 0 6px,#20263b 7px 13px,#4da3ff11 14px 23px);
+    mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
+    mask-size: 260px 50px; mask-repeat: no-repeat; mask-position: right top;
+    -webkit-mask-size: 260px 50px; -webkit-mask-position: right top;
+}
+
+.asteroid-belt-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 0 8px 0;
+  pointer-events:none;
+}
+.asteroid {
+  display: inline-block;
+  width: 16px; height: 16px;
+  background: #4da3ff84 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><ellipse cx="8" cy="8" rx="8" ry="7" fill="gray"/><ellipse cx="5" cy="5" rx="2" ry="1" fill="#ccc"/><ellipse cx="10" cy="12" rx="2" ry="1.5" fill="#bbb"/></svg>');
+  border-radius: 50%;
+  transform: rotate(calc(12deg * var(--i, 1))) scale(calc(0.7 + 0.5 * var(--i, 1)));
+  opacity: .82;
+  filter: grayscale(0.2) drop-shadow(0 1px 6px #20263b77);
+}
+/* Add some variation */
+.asteroid:nth-child(1) { --i: .2 }
+.asteroid:nth-child(2) { --i: .7 }
+.asteroid:nth-child(3) { --i: 1 }
+.asteroid:nth-child(4) { --i: 1.3 }
+.asteroid:nth-child(5) { --i: 0.4 }
+.asteroid:nth-child(6) { --i: 1.8 }
+
+/* ==========================================================================
+   SOLAR SYSTEM HERO
+   ========================================================================== */
+
+/* Text Gradient Effect */
+.text-gradient {
+    background: linear-gradient(135deg, #ffffff 40%, #4da3ff 70%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhancing standard paragraph styles for hero columns */
+.hero-video__content .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+}
+
+/* Image Showcase Upgrades */
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+}
+
+/* Ambient glow beneath the main illustration hero image */
+.hero-image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 30px;
+    background: radial-gradient(circle, rgba(77, 163, 255, 0.25) 0%, rgba(167, 139, 250, 0.15) 50%, transparent 100%);
+    filter: blur(40px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-image {
+    max-height: 380px;
+    object-fit: contain;
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 30px 70px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-image-wrapper:hover .hero-image {
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* Handle layout spacing cleanly for standard mobile sizes */
+@media (max-width: 991px) {
+    .hero-video {
+        min-height: auto;
+        padding-top: 130px;
+        padding-bottom: 100px;
+    }
+    .hero-video__content .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-scroll {
+        display: none; /* Hide scroll indicator if viewport height is small */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-image {
+        max-height: 240px;
+    }
+}
+
+/* ==========================================================================
+   SOLAR SYSTEM HERO ANIMATION STYLES (FRAMELESS/HOLOGRAPHIC)
+   ========================================================================== */
+
+/* Main Interactive Viewport Wrapper - Now Completely Frameless */
+.hero-space-viewport {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px; /* Maintains 3D depth orientation */
+    /* Removed backgrounds, borders, overflow clips, and box-shadows to let planets float freely */
+}
+
+/* Seamless Ambient Space Glow behind the Sun */
+.space-nebula {
+    position: absolute;
+    width: 130%; /* Slightly expanded for a softer blend */
+    height: 130%;
+    background: radial-gradient(circle at 50% 50%, rgba(77, 163, 255, 0.14) 0%, rgba(167, 139, 250, 0.07) 45%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Master Orbits Wrapper Container */
+.solar-system-mini {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateX(55deg) rotateY(-8deg); /* Isometric perspective tilt */
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+/* Central Star Element (The Sun) */
+.mini-sun {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: radial-gradient(circle, #ffffff 20%, #ffaa33 60%, #ff3300 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 25px #ffaa33,
+        0 0 50px rgba(255, 115, 0, 0.5);
+    transform: rotateX(-55deg); /* Counter-tilts to face viewer flatly */
+    animation: sun-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes sun-pulse {
+    0% { transform: rotateX(-55deg) scale(0.95); box-shadow: 0 0 25px #ffaa33, 0 0 40px rgba(255, 115, 0, 0.4); }
+    100% { transform: rotateX(-55deg) scale(1.05); box-shadow: 0 0 35px #ffaa33, 0 0 65px rgba(255, 115, 0, 0.7); }
+}
+
+/* Base Trajectory Line Framework */
+.orbit-ring {
+    position: absolute;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Spherical Body Base Layout class */
+.mini-planet {
+    position: absolute;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+/* --------------------------------------------------------------------------
+   ORBIT PATHS & ROTATIONS
+   -------------------------------------------------------------------------- */
+
+/* Inner Orbit (Mercury Configuration) */
+.ring-mercury {
+    width: 110px;
+    height: 110px;
+    animation: space-orbit-spin 6s linear infinite;
+}
+.planet-mercury {
+    top: 0;
+    left: 50%;
+    margin-left: -6px;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at 30% 30%, #a1a1a6, #555559);
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,0.7), 0 0 6px rgba(161,161,166,0.3);
+    transform: rotateX(-55deg);
+}
+
+/* Middle Orbit (Earth with Rotating Satellite Moon) */
+.ring-earth {
+    width: 220px;
+    height: 220px;
+    animation: space-orbit-spin 14s linear infinite;
+}
+.planet-earth {
+    top: 50%;
+    left: 0;
+    margin-top: -9px;
+    margin-left: -9px;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle at 30% 30%, #4da3ff, #0c4385);
+    box-shadow: inset -3px -3px 5px rgba(0,0,0,0.8), 0 0 12px rgba(77,163,255,0.4);
+    transform: rotateX(-55deg);
+}
+.mini-moon {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    top: -5px;
+    left: 50%;
+    animation: space-orbit-spin 2.5s linear infinite;
+    transform-origin: 2px 14px;
+}
+
+/* Outer Orbit (Saturn configuration with styled ring array) */
+.ring-outer {
+    width: 340px;
+    height: 340px;
+    animation: space-orbit-spin 24s linear infinite;
+}
+.planet-outer {
+    top: 50%;
+    right: 0;
+    margin-top: -11px;
+    margin-right: -11px;
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle at 30% 30%, #e0c3fc, #6b4194);
+    box-shadow: inset -4px -4px 6px rgba(0,0,0,0.8), 0 0 14px rgba(167,139,250,0.3);
+    transform: rotateX(-55deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mini-rings {
+    position: absolute;
+    width: 36px;
+    height: 10px;
+    border: 3px solid rgba(224, 195, 252, 0.4);
+    border-radius: 50%;
+    transform: rotateX(75deg);
+    pointer-events: none;
+}
+
+/* Global Planetary Spin Mechanism */
+@keyframes space-orbit-spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE LAYOUT RESPONSES
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .hero-space-viewport {
+        width: 340px;
+        height: 340px;
+    }
+    .ring-mercury { width: 85px; height: 85px; }
+    .ring-earth { width: 170px; height: 170px; }
+    .ring-outer { width: 260px; height: 260px; }
+    .planet-mercury { margin-left: -5px; width: 10px; height: 10px; }
+    .planet-earth { margin-top: -7px; margin-left: -7px; width: 14px; height: 14px; }
+    .planet-outer { margin-top: -9px; margin-right: -9px; width: 18px; height: 18px; }
+}
+
+@media (max-width: 420px) {
+    .hero-space-viewport {
+        width: 280px;
+        height: 280px;
+    }
+    .ring-mercury { width: 70px; height: 70px; }
+    .ring-earth { width: 140px; height: 140px; }
+    .ring-outer { width: 210px; height: 210px; }
+}
+
+
+/* ==========================================================================
+   FINAL RENDER DISPLAY
+   ========================================================================== */
+
+/* The Premium Screening Window Deck Frame */
+.render-video-deck {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 
+        0 40px 90px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    transition: border-color 0.4s ease;
+}
+
+.render-video-deck:hover {
+    border-color: rgba(77, 163, 255, 0.3);
+}
+
+/* Window Titlebar Header Styling */
+.deck-header {
+    padding: 4px 12px 14px 8px;
+}
+
+.deck-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-red   { background-color: #ff5f56; }
+.dot-amber { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.deck-badge {
+    background: rgba(77, 163, 255, 0.15);
+    color: #4da3ff;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(77, 163, 255, 0.25);
+}
+
+/* Native Video Element Styling Override */
+.render-native-player {
+    border-radius: 12px;
+    background-color: #040406;
+    outline: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+/* Limit descriptions max width cleanly */
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+/* Responsive Gutter Balancing */
+@media (max-width: 768px) {
+    .render-video-deck {
+        padding: 8px;
+        border-radius: 16px;
+    }
+    .deck-title {
+        display: none; /* Hide file path title on narrow smartphone displays */
+    }
+}
+
+/* ==========================================================================
+   TECHNICAL PROCESS DISPLAY STYLES
+   ========================================================================== */
+
+/* Process Card Layout Architecture */
+.process-step-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 35px 25px 25px 25px;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.process-step-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(77, 163, 255, 0.25);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.06) 100%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Numeric Absolute Badge Positioning */
+.step-badge {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.04);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.05em;
+    user-select: none;
+    transition: color 0.4s ease;
+}
+
+.process-step-card:hover .step-badge {
+    color: rgba(77, 163, 255, 0.12);
+}
+
+/* Icon Container Boxes */
+.step-icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+/* Gradient Utility to match Hero Text */
+.text-gradient-blue {
+    background: linear-gradient(135deg, #4da3ff, #a78bfa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Code Panel Presentation Display */
+.code-preview-deck {
+    background: #040508;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+.code-header {
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 20px;
+}
+
+.code-preview-deck pre {
+    padding: 24px 20px;
+    margin: 0;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Fast Code Highlighter Utilities */
+.text-comment { color: #6a737d; font-style: italic; }
+.text-info { color: #79c0ff; }
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+    .process-step-card {
+        padding: 25px 20px 20px 20px;
+    }
+    .code-preview-deck pre {
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================================================================
+   CINEMATIC CELESTIAL SHOWCASE - ULTIMATE SEAMLESS SPACE BLEND
+   ========================================================================== */
+
+/* Outer Canvas Container */
+.celestial-showcase-container {
+    position: relative !important;
+    background-color: transparent !important; 
+    padding: clamp(140px, 15vw, 200px) 0 !important;
+    overflow: hidden;
+}
+
+/* Isolated Background Layer: Fades background and stars seamlessly into adjacent sections */
+.showcase-space-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000 !important; /* Pure black blocks out global body gradients */
+    z-index: 1;
+    pointer-events: none;
+
+    /* Webkit Linear masking for background-only fading transitions */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000000 15%,
+        #000000 85%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000000 15%,
+        #000000 85%,
+        transparent 100%
+    );
+}
+
+/* High-Density Starfield Base Layer Configuration */
+.cosmic-starfield {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Layer 1: Enhanced Dense Micro-Background Stars */
+.cosmic-starfield.starfield-dense-back {
+    background-image: 
+        radial-gradient(1.5px 1.5px at 10% 12%, #ffffff 100%, transparent),
+        radial-gradient(1px 1px at 25% 35%, rgba(255, 255, 255, 0.9) 100%, transparent),
+        radial-gradient(1.5px 1.5px at 45% 20%, #ffffff 100%, transparent),
+        radial-gradient(1px 1px at 65% 55%, rgba(255, 255, 255, 0.8) 100%, transparent),
+        radial-gradient(2px 2px at 85% 15%, #ffffff 100%, transparent),
+        radial-gradient(1.5px 1.5px at 95% 40%, #ffffff 100%, transparent),
+        radial-gradient(1px 1px at 5% 75%, rgba(255, 255, 255, 0.85) 100%, transparent),
+        radial-gradient(2px 2px at 30% 85%, #ffffff 100%, transparent),
+        radial-gradient(1.5px 1.5px at 55% 70%, #ffffff 100%, transparent),
+        radial-gradient(1px 1px at 75% 90%, rgba(255, 255, 255, 0.9) 100%, transparent);
+    animation: space-twinkle-fast 3s infinite ease-in-out;
+}
+
+/* Layer 2: Medium High-Contrast Shimmer Stars */
+.cosmic-starfield.starfield-dense-mid {
+    background-image: 
+        radial-gradient(2px 2px at 8% 45%, #ffffff 100%, transparent),
+        radial-gradient(2.5px 2.5px at 20% 70%, #ffffff 100%, transparent),
+        radial-gradient(2px 2px at 40% 10%, #ffffff 100%, transparent),
+        radial-gradient(2.5px 2.5px at 60% 80%, #ffffff 100%, transparent),
+        radial-gradient(2px 2px at 78% 30%, rgba(255, 255, 255, 0.95) 100%, transparent),
+        radial-gradient(2.5px 2.5px at 88% 65%, #ffffff 100%, transparent),
+        radial-gradient(2px 2px at 50% 50%, #ffffff 100%, transparent),
+        radial-gradient(2.5px 2.5px at 92% 90%, #ffffff 100%, transparent);
+    animation: space-twinkle-medium 5.5s infinite ease-in-out alternate;
+}
+
+/* Layer 3: Sharp High-Visibility Diamond Beacons */
+.cosmic-starfield.starfield-dense-front {
+    background-image: 
+        radial-gradient(3.5px 3.5px at 15% 80%, #ffffff 100%, transparent),
+        radial-gradient(3px 3px at 38% 22%, #ffffff 100%, transparent),
+        radial-gradient(4px 4px at 70% 15%, #ffffff 100%, transparent),
+        radial-gradient(3.5px 3.5px at 82% 75%, #ffffff 100%, transparent),
+        radial-gradient(3px 3px at 52% 92%, #ffffff 100%, transparent),
+        radial-gradient(4px 4px at 90% 10%, #ffffff 100%, transparent);
+    animation: space-twinkle-slow 7.5s infinite ease-in-out;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+}
+
+/* Layer 4: Dense Milky Way Star Clusters */
+.cosmic-starfield.starfield-dense-cluster {
+    background-image: 
+        radial-gradient(1px 1px at 18% 65%, #ffffff 100%, transparent),
+        radial-gradient(1.5px 1.5px at 19% 67%, rgba(255,255,255,0.7) 100%, transparent),
+        radial-gradient(1px 1px at 22% 63%, #ffffff 100%, transparent),
+        radial-gradient(2px 2px at 66% 42%, #ffffff 100%, transparent),
+        radial-gradient(1px 1px at 68% 40%, rgba(255,255,255,0.9) 100%, transparent),
+        radial-gradient(1.5px 1.5px at 65% 45%, #ffffff 100%, transparent),
+        radial-gradient(2px 2px at 80% 28%, #ffffff 100%, transparent),
+        radial-gradient(1px 1px at 82% 26%, #ffffff 100%, transparent);
+    animation: space-twinkle-fast 4.5s infinite ease-in-out alternate;
+}
+
+/* Vivid Space Twinkle Computations */
+@keyframes space-twinkle-fast {
+    0%, 100% { opacity: 0.25; transform: scale(0.96); }
+    50% { opacity: 1.0; transform: scale(1.04); }
+}
+@keyframes space-twinkle-medium {
+    0%, 100% { opacity: 1.0; transform: scale(1.02); }
+    50% { opacity: 0.15; transform: scale(0.96); }
+}
+@keyframes space-twinkle-slow {
+    0%, 100% { opacity: 0.35; transform: scale(0.98); }
+    50% { opacity: 1.0; transform: scale(1.05); }
+}
+
+/* Two-Column Alternating Layout Matrix (Desktop Viewports) */
+@media (min-width: 992px) {
+    .showcase-row:nth-child(even) {
+        flex-direction: row-reverse !important;
+    }
+    .showcase-row:nth-child(even) .info-column {
+        padding-right: 6% !important;
+        padding-left: 15px !important;
+    }
+    .showcase-row:nth-child(odd) .info-column {
+        padding-left: 6% !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Clean Video Wrapper Framework: No borders, no filters, no shadows, complete black blending */
+.showcase-video-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    aspect-ratio: 16 / 10;
+    z-index: 3;
+}
+.showcase-native-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none !important;
+    filter: none !important; /* Removes all video overlays and custom filters */
+}
+
+/* Text Content Configurations (100% visible and unaffected by edge fades) */
+.showcase-info-card {
+    position: relative;
+    z-index: 3;
+}
+.planet-index-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
+    display: inline-block;
+}
+.planet-title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+.planet-long-description {
+    font-size: 1.02rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: justify;
+}
+
+/* Telemetry Dashboard Metric Data Grids */
+.planet-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+}
+.metric-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.metric-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+}
+.metric-value {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Mobile & Tablet Optimization Breakpoints */
+@media (max-width: 991.98px) {
+    .planet-metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .planet-long-description {
+        text-align: left;
+    }
+    .media-column {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
+
+
+/* ==========================================================================
+   COSMIC CALCULATOR STYLES (SIMPLIFIED UTILITY PALETTE)
+   ========================================================================== */
+
+/* Color Utility Tokens */
+.text-cosmic-primary { color: #4da3ff !important; }
+.text-cosmic-secondary { color: #a78bfa !important; }
+.bg-cosmic-secondary { background-color: #a78bfa !important; }
+
+.terminal-input-card, .terminal-display-deck {
+    background: linear-gradient(145deg, rgba(14, 16, 27, 0.45) 0%, rgba(7, 8, 14, 0.75) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.card-header-mono {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-label-mono {
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.05em;
+}
+
+.input-group-space {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    font-size: 1.05rem;
+}
+
+.form-control-space {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-control-space:focus {
+    border-color: rgba(77, 163, 255, 0.4);
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 20px rgba(77, 163, 255, 0.08);
+}
+
+/* Linear Primary Action Processing Button */
+.btn-terminal {
+    background: linear-gradient(135deg, #4da3ff 0%, #3388ff 100%);
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    box-shadow: 0 10px 25px rgba(77, 163, 255, 0.15);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-terminal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(77, 163, 255, 0.3);
+    background: linear-gradient(135deg, #66b2ff 0%, #4da3ff 100%);
+}
+
+.badge-status {
+    font-size: 0.72rem;
+    background: rgba(167, 139, 250, 0.1);
+    color: #a78bfa;
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Unified structural border layout */
+.telemetry-output-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #a78bfa; /* Using secondary color accent uniformly */
+    border-radius: 14px;
+    padding: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.telemetry-output-box:hover {
+    transform: translateX(3px);
+    border-left-color: #4da3ff; /* Switches to primary color on focus hover */
+}
+
+.display-age {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 6px 0 4px 0;
+}
+
+.text-white-10 { color: rgba(255, 255, 255, 0.1); }
+.text-white-25 { color: rgba(255, 255, 255, 0.25); }
+
+@media (max-width: 767px) {
+    .terminal-input-card, .terminal-display-deck {
+        padding: 20px;
+    }
+    .display-age {
+        font-size: 1.8rem;
+    }
+}
+
+/* ==========================================================================
+   PROJECT DOWNLOADABLES MATRIX DESIGNSTYLING (CLEAN CLOUD EDITION)
+   ========================================================================== */
+
+.asset-terminal-card {
+    background: linear-gradient(145deg, rgba(16, 18, 30, 0.5) 0%, rgba(8, 9, 16, 0.8) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.asset-terminal-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(77, 163, 255, 0.2);
+    box-shadow: 0 12px 30px rgba(77, 163, 255, 0.04);
+}
+
+.badge-format {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.asset-icon-frame {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Premium Technical Cloud Action Buttons */
+.btn-asset {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-asset:hover {
+    background: linear-gradient(135deg, #4da3ff 0%, #3388ff 100%);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(77, 163, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.btn-asset:active {
+    transform: translateY(0);
+}

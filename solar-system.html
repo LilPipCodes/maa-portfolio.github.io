@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LilPip | 3D Solar System</title>
+    <link rel="icon" type="image/svg+xml" href="star.svg">
+      <link rel="stylesheet" href="style/main.css">
+      <link rel="stylesheet" href="style/solar-system.css">
+   </head>
+   <body class="bg-dark text-white">
+      <div id="stars-bg"></div>
+      <div id="header-placeholder"></div>
+      <main>
+         <!-- 1. Hero Section -->
+         <section class="hero-video" aria-label="Solar System Hero">
+            <div class="container hero-video__content d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+               <div class="glass-card mx-auto p-5" style="max-width: 700px; border-radius: 2.8rem; background: rgba(40,0,60,0.65); box-shadow: 0 12px 80px 0 #a78bfa33, 0 2px 32px 0 #ff5ecb22; border: 2.5px solid rgba(167,139,250,0.22); backdrop-filter: blur(24px); position:relative; overflow:hidden;">
+                  <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+                     <div style="position:absolute;top:-60px;left:-60px;width:220px;height:220px;background:radial-gradient(circle at 40% 40%,#a78bfa88 0%,#ff5ecb00 80%);filter:blur(24px);"></div>
+                     <div style="position:absolute;bottom:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle at 60% 60%,#ff5ecb88 0%,#a78bfa00 80%);filter:blur(24px);"></div>
+                  </div>
+                  <div class="text-center mb-4 position-relative" style="z-index:1;">
+                     <span style="display:inline-block;padding:0.85em 2em;font-size:1.45rem;font-weight:800;color:#fff;background:linear-gradient(90deg,#a78bfa,#4A90E2);border-radius:2.2em;box-shadow:0 2px 32px #a78bfa55,0 1.5px 16px #4A90E244;letter-spacing:0.01em;backdrop-filter:blur(2px);">
+                        3D Solar System Project
+                     </span>
+                  </div>
+                  <div class="pill mx-auto mb-3 position-relative" style="z-index:1;">
+                     <span class="pill__dot" aria-hidden="true"></span>
+                     <span class="text-white-50">Blender | Python | 3D</span>
+                  </div>
+                  <h1 class="hero-title fw-bold mb-3 position-relative" style="color: white; text-shadow: 0 2px 32px #a78bfa99, 0 2px 24px #4A90E255; font-size:2.6rem;line-height:1.08;z-index:1;">A Cinematic Solar System</h1>
+                  <p class="hero-subtitle mb-4 position-relative" style="font-size:1.22rem; color:rgba(255,255,255,0.93); text-shadow: 0 2px 16px #a78bfa77;z-index:1; font-weight:500; letter-spacing:0.01em;">
+                     A Blender-powered visual showcase of our solar system. Rendered in full 3D with realistic lighting, procedural orbits, and planetary motion—complemented by interactive celestial data.
+                  </p>
+                  <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 mb-2 position-relative" style="z-index:1;">
+                     <a href="#project-details" class="btn btn-hero px-4" style="background:linear-gradient(90deg,#a78bfa,#4A90E2);color:#fff;font-weight:800;font-size:1.18rem;box-shadow:0 0 32px #a78bfa55,0 1.5px 16px #4A90E244;border:none;border-radius:2em;letter-spacing:0.01em;padding:0.7em 2.2em;transition:background 0.2s,box-shadow 0.2s;">View Details</a>
+                  </div>
+                  <div class="tag-row mt-4 position-relative" style="z-index:1;">
+                     <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">Full 3D</span>
+                     <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">Procedural</span>
+                     <span class="tag" style="background:rgba(167,139,250,0.18);color:#fff;font-weight:600;">Cinematic</span>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <div class="panel-break--right"></div>
+
+            <!-- PROJECT DETAILS & TUTORIAL SECTION -->
+            <section class="section" id="project-details" style="background:rgba(10,10,30,0.92);border-radius:2.5rem;box-shadow:0 0 64px #a78bfa55,0 0 32px #ff5ecb55;margin:3em 0;">
+               <div class="container py-5">
+                  <h2 class="text-center mb-5" style="font-size:2.3rem;font-weight:900;background:linear-gradient(90deg,#a78bfa,#ff5ecb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 24px #a78bfa77,0 0 16px #ff5ecb77;letter-spacing:0.03em;">Project Details</h2>
+                  <div class="row justify-content-center mb-5">
+                     <div class="col-lg-8">
+                        <div class="glass-card p-4" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;">
+                           <div style="color:#ff5ecb;font-weight:700;font-size:1.15em;margin-bottom:0.5em;">Tools Used</div>
+                           <ul style="color:#e2d9ff;font-size:1em;">
+                              <li>Blender 3.5 (for 3D modeling and animation)</li>
+                              <li>Python Scripting (for procedural generation and automation)</li>
+                           </ul>
+                           <div style="color:#ff5ecb;font-weight:700;font-size:1.15em;margin:1.2em 0 0.5em 0;">Render Information</div>
+                           <ul style="color:#e2d9ff;font-size:1em;">
+                              <li>Render Time: Approximately 13 hours and 30 minutes</li>
+                              <li>Resolution: 1920x1080 at 24fps</li>
+                              <li>Total Frames: 3500 (2 minutes and 25 seconds animation)</li>
+                           </ul>
+                           <div style="color:#ff5ecb;font-weight:700;font-size:1.15em;margin:1.2em 0 0.5em 0;">Key Features</div>
+                           <ul style="color:#e2d9ff;font-size:1em;">
+                              <li>Procedurally generated solar system with almost relative sizes</li>
+                              <li>Realistic orbital mechanics with almost relative speeds</li>
+                              <li>Dynamic camera movements zooming in/out between planets</li>
+                              <li>Detailed planetary textures and atmospheric effects</li>
+                              <li>Animated informational displays for each planet</li>
+                           </ul>
+                           <div style="color:#ff5ecb;font-weight:700;font-size:1.15em;margin:1.2em 0 0.5em 0;">Texture Materials</div>
+                           <ul style="color:#e2d9ff;font-size:1em;">
+                              <li>High-resolution planetary textures sourced from <a href="https://www.solarsystemscope.com/textures/" target="_blank" style="color:#a78bfa;text-decoration:underline;">Solar System Scope's texture library</a></li>
+                           </ul>
+                           <div style="color:#ff5ecb;font-weight:700;font-size:1.15em;margin:1.2em 0 0.5em 0;">Python Scripts for Sun and Each Planet</div>
+                           <ul style="color:#e2d9ff;font-size:1em;">
+                              <li>Python Scripts for Sun and Each Planet: <a href="https://github.com/your-repo/python-scripts" target="_blank" style="color:#a78bfa;text-decoration:underline;">Python Scripts for Sun and Each Planets</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <h2 class="text-center mb-5 mt-5" style="font-size:2.1rem;font-weight:900;background:linear-gradient(90deg,#a78bfa,#ff5ecb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 24px #a78bfa77,0 0 16px #ff5ecb77;letter-spacing:0.03em;">Animation Sequence</h2>
+                  <div class="row justify-content-center mb-5">
+                     <div class="col-lg-8">
+                        <div class="glass-card p-4" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #ff5ecb;">
+                           <div style="color:#a78bfa;font-weight:700;">Opening Sequence (0-3s)</div>
+                           <div style="color:#e2d9ff;">Camera zooms from sun into Mercury, establishing the scale and style of the animation.</div>
+                           <div class="mt-3" style="color:#a78bfa;font-weight:700;">Planetary Tour (3 secs each planet)</div>
+                           <div style="color:#e2d9ff;">Smooth transitions between each planet (Mercury to Pluto) displaying planet name.</div>
+                           <div class="mt-3" style="color:#a78bfa;font-weight:700;">Solar System Overview (1 minute)</div>
+                           <div style="color:#e2d9ff;">Camera zooms out to show the complete solar system with all planets orbiting the sun, demonstrating their relative positions and speeds.</div>
+                        </div>
+                     </div>
+                  </div>
+                  <h2 class="text-center mb-5 mt-5" style="font-size:2.1rem;font-weight:900;background:linear-gradient(90deg,#a78bfa,#ff5ecb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 24px #a78bfa77,0 0 16px #ff5ecb77;letter-spacing:0.03em;">Step-by-Step Tutorial</h2>
+                  <div class="row justify-content-center g-4">
+                        <div class="col-md-6 col-lg-4">
+                           <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;">
+                              <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                                <span style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #ff5ecb77;">1</span>
+                                <span style="color:#e2d9ff;font-weight:700;">Collect Reference Images</span>
+                              </div>
+                              <img src="assets/3D/step1.png" alt="Reference Images" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #a78bfa55;">
+                              <div style="color:#e2d9ff;">Gather high-resolution images of planets and celestial bodies for accurate modeling and texturing.</div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #ff5ecb;">
+                              <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                                <span style="background:linear-gradient(135deg,#ff5ecb,#a78bfa);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #a78bfa77;">2</span>
+                                <span style="color:#e2d9ff;font-weight:700;">Model Planets in Blender</span>
+                              </div>
+                              <img src="assets/3D/step2.png" alt="Modeling in Blender" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #ff5ecb55;">
+                              <div style="color:#e2d9ff;">Use Blender to create 3D spheres and adjust their scale to match real planetary proportions.</div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;">
+                              <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                                <span style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #ff5ecb77;">3</span>
+                                <span style="color:#e2d9ff;font-weight:700;">Texture and Shade</span>
+                              </div>
+                              <img src="assets/3D/step3.png" alt="Texture and Shade" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #a78bfa55;">
+                              <div style="color:#e2d9ff;">Apply textures and shaders to each planet for realistic surfaces, using scientific data for accuracy.</div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #ff5ecb;">
+                              <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                                <span style="background:linear-gradient(135deg,#ff5ecb,#a78bfa);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #a78bfa77;">4</span>
+                                <span style="color:#e2d9ff;font-weight:700;">Animate Orbits</span>
+                              </div>
+                              <img src="assets/3D/step4.png" alt="Animate Orbits" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #ff5ecb55;">
+                              <div style="color:#e2d9ff;">Animate the planets' orbits and rotations using Blender's timeline and keyframes for a dynamic solar system.</div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;">
+                              <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                                <span style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #ff5ecb77;">5</span>
+                                <span style="color:#e2d9ff;font-weight:700;">Python Scripting</span>
+                              </div>
+                              <img src="assets/3D/step5.png" alt="Python Scripting" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #a78bfa55;">
+                              <div style="color:#e2d9ff;">Use Python scripts in Blender to automate repetitive modeling and animation tasks.</div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="glass-card p-4 h-100" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #ff5ecb;">
+                              <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:1em;">
+                                <span style="background:linear-gradient(135deg,#ff5ecb,#a78bfa);color:#fff;font-weight:900;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 0 12px #a78bfa77;">6</span>
+                                <span style="color:#e2d9ff;font-weight:700;">Lighting & Rendering</span>
+                              </div>
+                              <img src="assets/3D/step6.png" alt="Lighting & Rendering" style="width:100%;border-radius:10px;margin-bottom:1em;object-fit:cover;max-height:140px;box-shadow:0 0 16px #ff5ecb55;">
+                              <div style="color:#e2d9ff;">Set up lighting and render the final animation with realistic shadows and highlights.</div>
+                           </div>
+                        </div>
+                  </div>
+               </div>
+            </section>
+         <!-- 2. Final Output Section (YouTube Embed) -->
+         <section id="final-output" class="section position-relative overflow-hidden" aria-label="Final 3D Render">
+            <div class="container floatup visible position-relative">
+               <div class="final-render-bg-glow position-absolute top-0 start-50 translate-middle-x w-100 h-100" style="z-index:0;pointer-events:none;"></div>
+               <div class="text-center max-w-2xl mx-auto mb-5 position-relative z-2">
+                  <div class="pill mx-auto mb-3 d-inline-flex align-items-center" style="background:rgba(60,20,80,0.7);box-shadow:0 0 12px #ff5ecb77;">
+                     <span class="pill__dot" style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);box-shadow:0 0 8px #ff5ecb77;" aria-hidden="true"></span>
+                     <span class="text-white-50">Cinematic Playback</span>
+                  </div>
+                  <h2 class="section-title fw-bold mb-3" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:2.7rem;letter-spacing:0.01em;">Final Render</h2>
+                  <p class="text-white-50" style="font-size:1.15rem;">
+                     Experience the completed high-fidelity animation simulation. Rendered with global illumination<br>and physically accurate material textures.
+                  </p>
+               </div>
+               <div class="row justify-content-center position-relative z-2">
+                  <div class="col-12 col-xl-11">
+                     <div class="glass-card p-0 render-mockup-frame" style="background:rgba(30,20,50,0.98);border-radius:1.7rem;box-shadow:0 0 48px #a78bfa99,0 0 24px #ff5ecb99;border:2.5px solid #a78bfa;overflow:hidden;">
+                        <div class="deck-header d-flex align-items-center justify-content-between px-4 pt-3 pb-2" style="background:rgba(80,40,120,0.18);border-top-left-radius:1.7rem;border-top-right-radius:1.7rem;">
+                           <div class="deck-dots d-flex gap-2">
+                              <span class="dot-red" style="background:#ff5e5e;width:12px;height:12px;border-radius:50%;box-shadow:0 0 6px #ff5e5e77;"></span>
+                              <span class="dot-amber" style="background:#ffd966;width:12px;height:12px;border-radius:50%;box-shadow:0 0 6px #ffd96677;"></span>
+                              <span class="dot-green" style="background:#7cffb2;width:12px;height:12px;border-radius:50%;box-shadow:0 0 6px #7cffb277;"></span>
+                           </div>
+                           <div class="deck-title text-white-50 small font-monospace">solar_system_final_render.mp4</div>
+                           <div class="deck-badge small font-monospace" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);color:#fff;padding:0.2em 0.9em;border-radius:1em;box-shadow:0 0 8px #ff5ecb77;">4K UHD</div>
+                        </div>
+                        <div class="ratio ratio-16x9 position-relative" style="background:radial-gradient(ellipse at 60% 40%,#a78bfa22 0%,#ff5ecb11 100%);">
+                           <video 
+                              class="render-native-player" 
+                              controls 
+                              preload="metadata" 
+                              poster="assets/img/video-thumbnail.jpg"
+                              style="border-radius:1.1rem;box-shadow:0 0 24px #ff5ecb33;">
+                              <source src="downloads/solar-system.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                           </video>
+                        </div>
+                        <div class="render-progress-bar w-100" style="height:6px;background:linear-gradient(90deg,#a78bfa,#ff5ecb);box-shadow:0 0 12px #ff5ecb77;opacity:0.7;"></div>
+                        <div class="row g-3 m-0 py-3 font-monospace text-white-50 small justify-content-between align-items-center" style="background:rgba(80,40,120,0.10);">
+                           <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                              <i class="fa-solid fa-clapperboard" style="color: #ff5ecb"></i>
+                              <span>Engine: <span style="color:#a78bfa">Blender Cycles</span></span>
+                           </div>
+                           <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                              <i class="fa-solid fa-microchip" style="color: #a78bfa"></i>
+                              <span>Samples: <span style="color:#ff5ecb">2,048 OptiX</span></span>
+                           </div>
+                           <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                              <i class="fa-solid fa-clock" style="color: #ff5ecb"></i>
+                              <span>Render Time: <span style="color:#a78bfa">14h 32m</span></span>
+                           </div>
+                           <div class="col-6 col-md-3 d-flex align-items-center gap-2 justify-content-md-end">
+                              <i class="fa-solid fa-expand" style="color: #a78bfa"></i>
+                              <span><span style="color:#ff5ecb">60 FPS</span> True Motion</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+        <div class="asteroid-belt-divider">
+          <span class="asteroid"></span>
+          <span class="asteroid"></span>
+          <span class="asteroid"></span>
+          <span class="asteroid"></span>
+          <span class="asteroid"></span>
+          <span class="asteroid"></span>
+        </div>
+<!-- 3. Process Section -->
+         <section id="process" class="section position-relative" aria-label="Technical Workflow">
+            <div class="container">
+               <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
+                  <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
+                     <span class="pill__dot bg-info" aria-hidden="true"></span>
+                     <span class="text-white-50">Methodology</span>
+                  </div>
+                  <h2 class="section-title fw-bold mb-3">The Scripted Pipeline</h2>
+                  <p class="text-white-50" style="font-size:1.15rem;">
+                     Using Blender’s Python API (<span class="text-gradient-blue">bpy</span>), the solar system was created, textured, and rendered automatically.
+                  </p>
+               </div>
+               <div class="row g-4 justify-content-center">
+                  <div class="col-12 col-md-6 col-lg-4">
+                     <div class="glass-card p-4 process-step-card floatup visible" style="background:rgba(30,20,50,0.98);border-radius:1.3rem;box-shadow:0 0 24px #a78bfa77,0 0 12px #ff5ecb77;border:2px solid #a78bfa;">
+                        <div class="step-badge" style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;box-shadow:0 0 8px #ff5ecb77;">01</div>
+                        <div class="step-icon-box" style="background:rgba(80,40,120,0.18);border-radius:0.7em;box-shadow:0 0 8px #a78bfa55;">
+                           <i class="fa-solid fa-earth-americas" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:2rem;"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Texture Synthesis</h3>
+                        <p class="text-white-50 small mb-0">
+                           Sourced high-resolution, spherical map textures for each planet. Configured surface maps to unwrap onto procedural UV spheres without mapping seams or visible coordinate tracking issues.
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4">
+                     <div class="glass-card p-4 process-step-card floatup visible" style="background:rgba(30,20,50,0.98);border-radius:1.3rem;box-shadow:0 0 24px #ff5ecb77,0 0 12px #a78bfa77;border:2px solid #ff5ecb;">
+                        <div class="step-badge" style="background:linear-gradient(135deg,#ff5ecb,#a78bfa);color:#fff;font-weight:900;box-shadow:0 0 8px #a78bfa77;">02</div>
+                        <div class="step-icon-box" style="background:rgba(80,40,120,0.18);border-radius:0.7em;box-shadow:0 0 8px #ff5ecb55;">
+                           <i class="fa-solid fa-code" style="background:linear-gradient(90deg,#a78bfa,#ff5ecb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:2rem;"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2" style="background:linear-gradient(90deg,#a78bfa,#ff5ecb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Scripting & Execution</h3>
+                        <p class="text-white-50 small mb-0">
+                           Utilized Blender’s Scripting Tab to write an initialization module. The code handles programmatic asset purging, links dynamic image inputs with texture blending nodes, and calculates matrix keyframe properties.
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4">
+                     <div class="glass-card p-4 process-step-card floatup visible" style="background:rgba(30,20,50,0.98);border-radius:1.3rem;box-shadow:0 0 24px #a78bfa77,0 0 12px #ff5ecb77;border:2px solid #a78bfa;">
+                        <div class="step-badge" style="background:linear-gradient(135deg,#a78bfa,#ff5ecb);color:#fff;font-weight:900;box-shadow:0 0 8px #ff5ecb77;">03</div>
+                        <div class="step-icon-box" style="background:rgba(80,40,120,0.18);border-radius:0.7em;box-shadow:0 0 8px #a78bfa55;">
+                           <i class="fa-solid fa-sliders" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:2rem;"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Cinematic Rendering</h3>
+                        <p class="text-white-50 small mb-0">
+                           Calibrated output parameters within Blender's render queue. Programmed the target engine directly to Cycles tracking, deploying a precise 3-point point-light map structure and 60 FPS video format vectors.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row mt-5 justify-content-center">
+                  <div class="col-12 col-xl-10">
+                     <div class="glass-card p-0 code-preview-deck floatup visible" style="background:rgba(30,20,50,0.98);border-radius:1.3rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2px solid #ff5ecb;overflow:hidden;">
+                        <div class="code-header d-flex justify-content-between align-items-center px-4 pt-3 pb-2" style="background:rgba(80,40,120,0.18);border-top-left-radius:1.3rem;border-top-right-radius:1.3rem;">
+                           <span class="text-white-50 small font-monospace"><i class="fa-brands fa-python me-2 text-warning"></i>script_template.py</span>
+                           <span class="badge font-monospace" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);color:#fff;padding:0.2em 0.9em;border-radius:1em;box-shadow:0 0 8px #ff5ecb77;">Blender API v4.x</span>
+                        </div>
+                        <pre class="mb-0 font-monospace text-start" style="background:transparent;color:#e2d9ff;font-size:1.05em;padding:1.2em 1.5em 1.2em 1.5em;overflow-x:auto;"><code class="text-white-50"><span class="text-primary">import</span> bpy
+
+                        <span class="text-comment"># Programmatic Scene Instantiation & Material Mapping</span>
+                        <span class="text-primary">def</span> <span class="text-info">setup_scene</span>():
+                            <span class="text-comment"># 1. Clean Slate (Purge Old Geometry)</span>
+                            bpy.ops.object.select_all(action=<span class="text-warning">'SELECT'</span>)
+                            bpy.ops.object.delete()
+
+                            <span class="text-comment"># 2. Instantiate Parameterized Mesh</span>
+                            bpy.ops.mesh.primitive_uv_sphere_add(segments=128, ring_count=64, radius=0.75)
+                            earth = bpy.context.active_object
+                            earth.name = <span class="text-warning">"Earth"</span>
+                            bpy.ops.object.shade_smooth()
+
+                            <span class="text-comment"># 3. Dynamic Node Graph Configurations</span>
+                            mat = bpy.data.materials.new(name=<span class="text-warning">"EarthMaterial"</span>)
+                            mat.use_nodes = <span class="text-primary">True</span>
+                            nodes = mat.node_tree.nodes; nodes.clear()
+                            
+                            out = nodes.new(<span class="text-warning">'ShaderNodeOutputMaterial'</span>)
+                            bsdf = nodes.new(<span class="text-warning">'ShaderNodeBsdfPrincipled'</span>) 
+                            wave = nodes.new(<span class="text-warning">'ShaderNodeTexWave'</span>)
+                            bump = nodes.new(<span class="text-warning">'ShaderNodeBump'</span>)
+                            
+                            <span class="text-comment"># Inject Linear Rotations & Expression Drivers</span>
+                            bpy.context.preferences.edit.keyframe_new_interpolation_type = <span class="text-warning">'LINEAR'</span>
+                            earth.rotation_euler = (0, 0, 0); earth.keyframe_insert(data_path=<span class="text-warning">"rotation_euler"</span>, frame=1)
+                            earth.rotation_euler = (0, 0, 6.28); earth.keyframe_insert(data_path=<span class="text-warning">"rotation_euler"</span>, frame=250)
+                            
+                            driver = wave.inputs[1].driver_add(<span class="text-warning">'default_value'</span>)
+                            driver.driver.expression = <span class="text-warning">"frame / 25.0"</span>
+
+                            <span class="text-comment"># 4. 3-Point Studio Lighting Engine Configuration</span>
+                            bpy.ops.object.light_add(type=<span class="text-warning">'POINT'</span>, location=(3, -5, 2)) <span class="text-comment"># Key Light</span>
+                            bpy.context.active_object.data.energy = 5000 
+                            
+                            bpy.ops.object.light_add(type=<span class="text-warning">'POINT'</span>, location=(-1.5, 2, -0.3)) <span class="text-comment"># Rim Light</span>
+                            bpy.context.active_object.data.energy = 1000 
+
+                            <span class="text-comment"># Initialize Camera Constraints & Cycles Hardware Engine</span>
+                            bpy.ops.object.camera_add(location=(0, -2.3, 0), rotation=(1.57, 0, 0))
+                            bpy.context.scene.camera = bpy.context.active_object
+                            bpy.context.scene.render.engine = <span class="text-warning">'CYCLES'</span></code></pre>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+          <!-- 4. Celestial Showcase Section -->
+         <!-- PLANET AGE CALCULATOR DASHBOARD (NEW) -->
+
+         <section id="planet-age-dashboard" class="section position-relative" aria-label="Planet Age Calculator" style="padding-top:0;">
+            <div class="container position-relative z-3">
+               <div class="text-center mb-4">
+                  <h2 class="fw-bold mb-2" style="font-size:2.2rem;color:#fff;letter-spacing:0.01em;">Solar System Age Calculator</h2>
+                  <p class="text-white-50 mx-auto" style="max-width: 540px;font-size:1.13rem;">Enter your age in Earth years to instantly see how old you would be on every major planet, the Moon, Pluto, and even the Sun! Discover fun facts and compare orbital periods across the solar system.</p>
+               </div>
+               <div class="planet-calc-hero sticky-top" style="top:0;z-index:20;background:rgba(20,10,40,0.98);border-radius:2.2rem;box-shadow:0 8px 32px #a78bfa33,0 1.5px 16px #ff5ecb22;border:2.5px solid rgba(167,139,250,0.18);backdrop-filter:blur(18px);padding:2.2rem 1.5rem 1.2rem 1.5rem;max-width:600px;margin:0 auto 2.5rem auto;">
+                  <form id="planet-calc-form" class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3" autocomplete="off" onsubmit="event.preventDefault(); updatePlanetCards();">
+                     <label for="planet-calc-input" class="fw-bold text-white-50 mb-2 mb-md-0 me-md-2" style="font-size:1.18rem;letter-spacing:0.01em;">Enter Earth years:</label>
+                     <input type="number" id="planet-calc-input" class="form-control font-monospace" style="max-width:120px;font-size:1.18rem;" min="0.01" max="150" step="0.01" value="22.76" required>
+                     <button type="submit" class="btn btn-hero px-4" style="background:linear-gradient(90deg,#a78bfa,#4A90E2);color:#fff;font-weight:800;font-size:1.1rem;border:none;border-radius:2em;letter-spacing:0.01em;padding:0.6em 2em;">Calculate</button>
+                  </form>
+               </div>
+               <div class="planet-card-grid row row-cols-1 row-cols-md-2 g-4 justify-content-center" id="planet-card-grid">
+                  <!-- Cards will be injected by JS -->
+               </div>
+            </div>
+         </section>
+
+        
+         <div class="panel-break"></div>
+         <section id="downloadables" class="section position-relative overflow-hidden" aria-label="Project Assets">
+            <div class="container relative-z floatup visible">
+               <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
+                  <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
+                     <span class="pill__dot bg-cosmic-primary" aria-hidden="true"></span>
+                     <span class="text-white-50">Cloud Repository</span>
+                  </div>
+                  <h2 class="section-title fw-bold mb-3">Project Assets</h2>
+                  <p class="text-white-50">Get the source files directly via Google Drive.</p>
+               </div>
+               <div class="row g-4 justify-content-center">
+                  <div class="col-12 col-md-6 col-lg-4">
+                     <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between glass-card p-4" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #ff5ecb;">
+                        <div class="mb-4">
+                           <div class="d-flex justify-content-between align-items-center mb-3">
+                              <span class="badge-format font-monospace">GDRIVE</span>
+                              <span class="text-white-25 small font-monospace">.BLEND</span>
+                           </div>
+                           <div class="d-flex align-items-center gap-3">
+                              <div class="asset-icon-frame text-cosmic-secondary">
+                                 <i class="fa-solid fa-cube"></i>
+                              </div>
+                              <div>
+                                 <h3 class="h6 fw-bold text-white mb-1">Blender Files</h3>
+                                 <p class="text-white-50 small mb-0">3D models and environment scene.</p>
+                              </div>
+                           </div>
+                        </div>
+                        <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
+                        <i class="fa-brands fa-google-drive me-2"></i>OPEN_FILES
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4">
+                     <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between glass-card p-4" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;">
+                        <div class="mb-4">
+                           <div class="d-flex justify-content-between align-items-center mb-3">
+                              <span class="badge-format font-monospace">GDRIVE</span>
+                              <span class="text-white-25 small font-monospace">.PY</span>
+                           </div>
+                           <div class="d-flex align-items-center gap-3">
+                              <div class="asset-icon-frame text-cosmic-primary">
+                                 <i class="fa-brands fa-python"></i>
+                              </div>
+                              <div>
+                                 <h3 class="h6 fw-bold text-white mb-1">Python Scripts</h3>
+                                 <p class="text-white-50 small mb-0">Orbital calculations and automation scripts.</p>
+                              </div>
+                           </div>
+                        </div>
+                        <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
+                        <i class="fa-brands fa-google-drive me-2"></i>VIEW_SOURCES
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4">
+                     <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between glass-card p-4" style="background:rgba(30,20,50,0.98);border-radius:1.5rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #ff5ecb;">
+                        <div class="mb-4">
+                           <div class="d-flex justify-content-between align-items-center mb-3">
+                              <span class="badge-format font-monospace">GDRIVE</span>
+                              <span class="text-white-25 small font-monospace">.MP4</span>
+                           </div>
+                           <div class="d-flex align-items-center gap-3">
+                              <div class="asset-icon-frame text-cosmic-secondary">
+                                 <i class="fa-solid fa-file-video"></i>
+                              </div>
+                              <div>
+                                 <h3 class="h6 fw-bold text-white mb-1">HD Rendered Videos</h3>
+                                 <p class="text-white-50 small mb-0">Final 60fps cinematic render loop.</p>
+                              </div>
+                           </div>
+                        </div>
+                        <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
+                        <i class="fa-brands fa-google-drive me-2"></i>DOWNLOAD_VIDEOS
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      <div id="footer-placeholder"></div>
+      <script>
+         var link = document.createElement('link');
+         link.rel = 'stylesheet';
+         link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+         document.head.appendChild(link);
+         
+         var faLink = document.createElement('link');
+         faLink.rel = 'stylesheet';
+         faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+         document.head.appendChild(faLink);
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="scripts/main.js"></script>
+      <script>
+      // Starfield background animation (from index.html)
+      function createStars(numStars = 80) {
+         const starsBg = document.getElementById('stars-bg');
+         if (!starsBg) return;
+         starsBg.innerHTML = '';
+         for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2.2 + 1.2;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.opacity = 0.7 + Math.random() * 0.3;
+            star.style.animationDuration = `${2 + Math.random() * 2.5}s`;
+            starsBg.appendChild(star);
+         }
+      }
+      window.addEventListener('DOMContentLoaded', () => createStars());
+      window.addEventListener('resize', () => createStars());
+      </script>
+      <script src="scripts/planet-calculator.js"></script>
+   </body>
+</html>
