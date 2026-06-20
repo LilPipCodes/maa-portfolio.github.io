@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 0,
                 desc: 'The Sun is the heart of our solar system, a massive ball of burning plasma that provides the energy for life on Earth.',
                 funFact: 'The Sun contains 99.86% of all the mass in the solar system!',
+                youtubeUrl: 'https://youtu.be/TGCl8qQEGa8',
                 video: 'sun'
             },
             {
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 57.9,
                 desc: 'Mercury is the smallest and innermost planet, orbiting the Sun every 88 days. Its iron core and lack of atmosphere create wild temperature swings.',
                 funFact: 'A day on Mercury (sunrise to sunrise) lasts 176 Earth days!',
+                youtubeUrl: 'https://youtu.be/vyxv8QGnRzE',
                 video: 'mercury'
             },
             {
@@ -64,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 108.2,
                 desc: 'Venus is shrouded in thick clouds of CO₂ and sulfuric acid. Its runaway greenhouse effect makes it the hottest planet in the solar system.',
                 funFact: 'Venus spins backwards compared to most planets—its day is longer than its year!',
+                youtubeUrl: 'https://youtu.be/RBh5BnGCC8o',
                 video: 'venus'
             },
             {
@@ -75,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 149.6,
                 desc: 'Earth is the only known world with life, liquid water, and a protective atmosphere. Its magnetic field shields the biosphere from solar wind.',
                 funFact: 'Earth is the densest planet in the solar system.',
+                youtubeUrl: 'https://youtu.be/-qozCqLA-O4',
                 video: 'earth'
             },
             {
@@ -86,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 0.384, // million km from Earth
                 desc: 'The Moon stabilizes Earth’s tilt and tides. Its cratered surface preserves the solar system’s ancient history.',
                 funFact: 'The Moon is slowly drifting away from Earth—about 3.8 cm per year.',
+                youtubeUrl: 'https://youtu.be/EpPrEBRKskE',
                 video: 'moon'
             },
             {
@@ -97,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 227.9,
                 desc: 'Mars is a cold desert with polar ice caps and the largest volcano. Its thin atmosphere is mostly CO₂.',
                 funFact: 'Mars has the tallest volcano in the solar system—Olympus Mons.',
+                youtubeUrl: 'https://youtu.be/mzrHB4uy_c0',
                 video: 'mars'
             },
             {
@@ -108,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 778.5,
                 desc: 'Jupiter is the largest planet, a gas giant with a Great Red Spot storm and dozens of moons. Its gravity shapes the solar system.',
                 funFact: 'Jupiter has at least 95 moons—the most of any planet!',
+                youtubeUrl: 'https://youtu.be/o11ZH0i-Otc',
                 video: 'jupiter'
             },
             {
@@ -119,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 1434,
                 desc: 'Saturn is famous for its rings of ice and rock. Its low density means it would float in water.',
                 funFact: 'Saturn’s rings are mostly made of water ice and are only about 30 feet thick!',
+                youtubeUrl: 'https://youtu.be/6DQ2G2Klj4U',
                 video: 'saturn'
             },
             {
@@ -130,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 2871,
                 desc: 'Uranus spins on its side, causing extreme seasons. Its blue-green color comes from methane in its atmosphere.',
                 funFact: 'Uranus has 13 known rings and 27 known moons.',
+                youtubeUrl: 'https://youtu.be/46_3zWrZZ24',
                 video: 'uranus'
             },
             {
@@ -141,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 4495,
                 desc: 'Neptune is a windy ice giant with supersonic storms. Its deep blue color is due to methane and unknown atmospheric components.',
                 funFact: 'Neptune’s winds can reach up to 2,100 km/h—the fastest in the solar system.',
+                youtubeUrl: 'https://youtu.be/JRQa-LcRVQI',
                 video: 'neptune'
             },
             {
@@ -152,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 5906.4,
                 desc: 'Pluto is a dwarf planet in the Kuiper Belt, known for its eccentric orbit and icy surface.',
                 funFact: 'Pluto has five known moons, the largest is Charon.',
+                youtubeUrl: 'https://youtu.be/iAxt1amjpYc',
                 video: 'pluto'
             }
         ];
@@ -198,6 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                             </div>
                                             <div class="planet-desc mb-2" style="font-size:1.08rem;color:#e2d9ff;opacity:0.92;">${planet.desc}</div>
                                             <div class="planet-fact" style="font-size:1.01rem;color:#a78bfa;font-weight:600;opacity:0.98;"><span style="color:#fff;font-weight:700;">Fun Fact:</span> ${planet.funFact}</div>
+                                            <div class="mt-4">
+                                                <a href="${planet.youtubeUrl}" target="_blank" rel="noopener" class="btn btn-hero px-4 w-100" style="background:linear-gradient(90deg,#a78bfa,#4A90E2);color:#fff;font-weight:800;font-size:1rem;box-shadow:0 0 24px #a78bfa55,0 1.5px 12px #4A90E244;border:none;border-radius:2em;letter-spacing:0.01em;padding:0.65em 1.6em;transition:background 0.2s,box-shadow 0.2s;">
+                                                    <i class="fa-brands fa-youtube me-2"></i>Watch on YouTube
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
