@@ -223,53 +223,429 @@
         <h2 class="fw-bold mb-2" style="font-size:1.6rem;background:linear-gradient(90deg,#a78bfa,#ff5ecb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 16px #a78bfa77,0 0 8px #ff5ecb77;letter-spacing:0.02em;">Blender Python Script Template</h2>
         <p class="text-white-50 mb-0" style="font-size:1.08rem;max-width:700px;">This template demonstrates how Blender's Python API is used to automate 3D scene setup, material assignment, animation, and lighting for the solar system project. It enables procedural generation and efficient rendering of planetary scenes.</p>
       </div>
-      <div class="code-header d-flex justify-content-between align-items-center px-4 pt-3 pb-2" style="background:rgba(80,40,120,0.18);border-top-left-radius:1.3rem;border-top-right-radius:1.3rem;">
+         <div class="code-header d-flex justify-content-between align-items-center px-4 pt-3 pb-2" style="background:rgba(80,40,120,0.18);border-top-left-radius:1.3rem;border-top-right-radius:1.3rem;">
         <span class="text-white-50 small font-monospace"><i class="fa-brands fa-python me-2 text-warning"></i>script_template.py</span>
-        <span class="badge font-monospace" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);color:#fff;padding:0.2em 0.9em;border-radius:1em;box-shadow:0 0 8px #ff5ecb77;">Blender API v4.x</span>
+            <div class="d-flex align-items-center gap-2">
+               <button type="button" class="btn btn-sm btn-outline-light copy-code-btn font-monospace" data-copy-target="blender-script-template" style="border-radius:999px;border-color:rgba(255,255,255,0.24);color:#fff;background:rgba(255,255,255,0.08);padding:0.25rem 0.8rem;">
+                  Copy
+               </button>
+               <span class="badge font-monospace" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);color:#fff;padding:0.2em 0.9em;border-radius:1em;box-shadow:0 0 8px #ff5ecb77;">Blender API v4.x</span>
+            </div>
       </div>
-      <pre class="mb-0 font-monospace text-start" style="background:transparent;color:#e2d9ff;font-size:1.05em;padding:1.2em 1.5em 1.2em 1.5em;overflow-x:auto;"><code class="text-white-50"><span class="text-primary">import</span> bpy
+            <pre class="mb-0 font-monospace text-start" style="background:transparent;color:#e2d9ff;font-size:1.05em;padding:1.2em 1.5em 1.2em 1.5em;overflow-x:auto;"><code id="blender-script-template">import bpy
+   import math
+   import mathutils
 
-                        <span class="text-comment"># Programmatic Scene Instantiation & Material Mapping</span>
-                        <span class="text-primary">def</span> <span class="text-info">setup_scene</span>():
-                            <span class="text-comment"># 1. Clean Slate (Purge Old Geometry)</span>
-                            bpy.ops.object.select_all(action=<span class="text-warning">'SELECT'</span>)
-                            bpy.ops.object.delete()
+   def setup_perfect_documentary_choreography():
+      camera = bpy.data.objects.get("Camera")
+      if not camera:
+         print("Error: 'Camera' object not found!")
+         return
+    
+      # 1. IPATUPAD ANG LENS PROPERTIES MULA SA SCREENSHOT
+      camera_data = camera.data
+      camera_data.type = 'PERSP'
+      camera_data.lens = 26.27              # Focal Length: 26.27 mm
+      camera_data.lens_unit = 'MILLIMETERS'
+      camera_data.shift_x = -0.150          # Shift X: -0.150
+      camera_data.shift_y = 0.000           # Shift Y: 0.000
+      camera_data.clip_start = 0.1          # Clip Start: 0.1 m
+      camera_data.clip_end = 2777.0         # Clip End: 2777 m
+    
+      # 2. LINISIN ANG MGA LUMANG ILAW AT ANIMATION PARA WALANG CONFLICT
+      camera.animation_data_clear()
+    
+      body_order = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"]
+      all_bodies = ["Sun", "Moon"] + body_order
+    
+      for name in all_bodies:
+         obj = bpy.data.objects.get(name)
+         if obj:
+            obj.animation_data_clear()
+            
+      # Burahin ang mga lumang cinematic lights at text cards
+      for obj in list(bpy.data.objects):
+         if "Title_" in obj.name or "Cinematic_Sun" in obj.name or "Space_Ambient" in obj.name:
+            bpy.data.objects.remove(obj, do_unlink=True)
+            
+      # 3. SETUP CINEMATIC LIGHTING RIG
+      # Gagawa ng Main Cinematic Sun Light (Directional Light)
+      light_data = bpy.data.lights.new(name="Cinematic_Sun_Data", type='SUN')
+      light_sun = bpy.data.objects.new(name="Cinematic_Sun", object_data=light_data)
+      bpy.context.collection.objects.link(light_sun)
+    
+      light_data.energy = 8.0              # Malakas na pang-puno ng liwanag (Cinematic Highlights)
+      light_data.color = (1.0, 0.95, 0.88)  # Medyo warm white para sa sikat ng araw
+      light_data.angle = math.radians(2.0)  # Swabeng gilid ng anino (soft shadows)
+    
+      # Gagawa ng Space Ambient Fill Light (Para hindi maging pitch black ang anino ng mga planeta)
+      fill_data = bpy.data.lights.new(name="Space_Ambient_Data", type='SUN')
+      light_fill = bpy.data.objects.new(name="Space_Ambient", object_data=fill_data)
+      bpy.context.collection.objects.link(light_fill)
+    
+      fill_data.energy = 0.25               # Mahina lang, sapat lang para makita ang detalye sa madidilim na bahagi
+      fill_data.color = (0.4, 0.5, 0.7)     # Malamig na kulay asul (space glow reflection)
+      fill_data.angle = math.radians(90.0)  # Napakalambot na anino
+      # I-rotate ang Ambient Light sa kabaligtaran ng Sun para punan ang anino
+      light_fill.rotation_euler = (math.radians(45), math.radians(45), 0)
 
-                            <span class="text-comment"># 2. Instantiate Parameterized Mesh</span>
-                            bpy.ops.mesh.primitive_uv_sphere_add(segments=128, ring_count=64, radius=0.75)
-                            earth = bpy.context.active_object
-                            earth.name = <span class="text-warning">"Earth"</span>
-                            bpy.ops.object.shade_smooth()
+      # 4. SETUP BACKGROUND ENVIRONMENT (Milky Way)
+      bpy.context.scene.use_nodes = True
+      world = bpy.context.scene.world
+      world.use_nodes = True
+      nodes = world.node_tree.nodes
+      nodes.clear()
+    
+      node_coord = nodes.new(type='ShaderNodeTexCoord')
+      node_mapping = nodes.new(type='ShaderNodeMapping')
+      node_env = nodes.new(type='ShaderNodeTexEnvironment')
+      node_background = nodes.new(type='ShaderNodeBackground')
+      node_output = nodes.new(type='ShaderNodeOutputWorld')
+    
+      image_path = r"C:\Users\artsi\Downloads\Solar_System_Asset_Pack\milkyway.jpg"
+      try:
+         img = bpy.data.images.load(image_path)
+         node_env.image = img
+      except Exception as e:
+         print(f"Warning: Background image load failed: {e}")
+        
+      world.node_tree.links.new(node_coord.outputs['Generated'], node_mapping.inputs['Vector'])
+      world.node_tree.links.new(node_mapping.outputs['Vector'], node_env.inputs['Vector'])
+      world.node_tree.links.new(node_env.outputs['Color'], node_background.inputs['Color'])
+      world.node_tree.links.new(node_background.outputs['Background'], node_output.inputs['Surface'])
+    
+      # TIMING MANAGEMENT (24 FPS)
+      fps = 24
+      opening_duration = 5 * fps   # 120 frames
+      tour_duration = 6 * fps      # 144 frames per planet
+      zoom_out_duration = 5 * fps  # 120 frames transition out
+      total_finale_frames = 2856   # 1 buong minuto para sa dulo mula frame 1416
+    
+      sun = bpy.data.objects.get("Sun")
+      current_frame = 1
 
-                            <span class="text-comment"># 3. Dynamic Node Graph Configurations</span>
-                            mat = bpy.data.materials.new(name=<span class="text-warning">"EarthMaterial"</span>)
-                            mat.use_nodes = <span class="text-primary">True</span>
-                            nodes = mat.node_tree.nodes; nodes.clear()
-                            
-                            out = nodes.new(<span class="text-warning">'ShaderNodeOutputMaterial'</span>)
-                            bsdf = nodes.new(<span class="text-warning">'ShaderNodeBsdfPrincipled'</span>) 
-                            wave = nodes.new(<span class="text-warning">'ShaderNodeTexWave'</span>)
-                            bump = nodes.new(<span class="text-warning">'ShaderNodeBump'</span>)
-                            
-                            <span class="text-comment"># Inject Linear Rotations & Expression Drivers</span>
-                            bpy.context.preferences.edit.keyframe_new_interpolation_type = <span class="text-warning">'LINEAR'</span>
-                            earth.rotation_euler = (0, 0, 0); earth.keyframe_insert(data_path=<span class="text-warning">"rotation_euler"</span>, frame=1)
-                            earth.rotation_euler = (0, 0, 6.28); earth.keyframe_insert(data_path=<span class="text-warning">"rotation_euler"</span>, frame=250)
-                            
-                            driver = wave.inputs[1].driver_add(<span class="text-warning">'default_value'</span>)
-                            driver.driver.expression = <span class="text-warning">"frame / 25.0"</span>
+      # --- STAGE 1: OPENING SEQUENCE (Sun Reveal to Mercury) ---
+      if sun:
+         sun_dim = max(sun.dimensions.x, sun.dimensions.y, sun.dimensions.z)
+         if sun_dim == 0: sun_dim = 2.0
+         camera.location = (sun.location.x + sun_dim * 1.5, sun.location.y - sun_dim * 1.5, sun.location.z + sun_dim * 0.4)
+         camera.keyframe_insert(data_path="location", frame=current_frame)
+        
+         bpy.context.scene.frame_set(current_frame)
+         direction = sun.location - camera.location
+         camera.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
+         camera.keyframe_insert(data_path="rotation_euler", frame=current_frame)
+        
+      current_frame += opening_duration
+      mercury = bpy.data.objects.get("Mercury")
+      if mercury:
+         merc_dim = max(mercury.dimensions.x, mercury.dimensions.y, mercury.dimensions.z)
+         if merc_dim == 0: merc_dim = 2.0
+         camera.location = (mercury.location.x + merc_dim * 4.0, mercury.location.y - merc_dim * 2.0, mercury.location.z + merc_dim * 1.0)
+         camera.keyframe_insert(data_path="location", frame=current_frame)
+        
+         bpy.context.scene.frame_set(current_frame)
+         direction = mercury.location - camera.location
+         camera.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
+         camera.keyframe_insert(data_path="rotation_euler", frame=current_frame)
 
-                            <span class="text-comment"># 4. 3-Point Studio Lighting Engine Configuration</span>
-                            bpy.ops.object.light_add(type=<span class="text-warning">'POINT'</span>, location=(3, -5, 2)) <span class="text-comment"># Key Light</span>
-                            bpy.context.active_object.data.energy = 5000 
-                            
-                            bpy.ops.object.light_add(type=<span class="text-warning">'POINT'</span>, location=(-1.5, 2, -0.3)) <span class="text-comment"># Rim Light</span>
-                            bpy.context.active_object.data.energy = 1000 
+      # --- STAGE 2: PLANETARY TOUR (DYNAMIC LIGHT TRACKING) ---
+      for index, name in enumerate(body_order):
+         obj = bpy.data.objects.get(name)
+         if not obj: continue
+            
+         start_tour = current_frame
+         end_tour = start_tour + tour_duration
+         max_dim = max(obj.dimensions.x, obj.dimensions.y, obj.dimensions.z)
+         if max_dim == 0: max_dim = 2.0
+            
+         loc = obj.location
+         obj.keyframe_insert(data_path="location", frame=1)
+         obj.keyframe_insert(data_path="location", frame=end_tour)
+        
+         # Kamera posisyon
+         dist_mult = 5.5 if max_dim > 10 else 4.0
+         cam_dist = max_dim * dist_mult
+        
+         camera.location = (loc.x + cam_dist, loc.y - (max_dim * 0.8), loc.z + (cam_dist * 0.3))
+         camera.keyframe_insert(data_path="location", frame=start_tour)
+        
+         camera.location = (loc.x + (cam_dist * 0.85), loc.y + (max_dim * 0.8), loc.z + (cam_dist * 0.25))
+         camera.keyframe_insert(data_path="location", frame=end_tour)
+        
+         # Pag-ikot ng camera patungo sa planeta
+         bpy.context.scene.frame_set(start_tour)
+         direction = loc - camera.location
+         camera.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
+         camera.keyframe_insert(data_path="rotation_euler", frame=start_tour)
+        
+         bpy.context.scene.frame_set(end_tour)
+         direction = loc - camera.location
+         camera.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
+         camera.keyframe_insert(data_path="rotation_euler", frame=end_tour)
+        
+         # CINEMATIC LIGHTING KEYFRAMES:
+         # Ang sikat ng ilaw ay manggagaling sa magandang side-angle ng camera para may "Chiaroscuro" cinematic effect bawat planeta
+         bpy.context.scene.frame_set(start_tour)
+         sun_dir = loc - mathutils.Vector((loc.x - 50, loc.y - 30, loc.z + 20))
+         light_sun.rotation_euler = sun_dir.to_track_quat('-Z', 'Y').to_euler()
+         light_sun.keyframe_insert(data_path="rotation_euler", frame=start_tour)
+        
+         bpy.context.scene.frame_set(end_tour)
+         sun_dir_end = loc - mathutils.Vector((loc.x - 45, loc.y - 25, loc.z + 18))
+         light_sun.rotation_euler = sun_dir_end.to_track_quat('-Z', 'Y').to_euler()
+         light_sun.keyframe_insert(data_path="rotation_euler", frame=end_tour)
+        
+         # TEXT CREATION & VISIBILITY KEYFRAMES
+         bpy.ops.object.text_add(location=(0, 0, 0))
+         t_card = bpy.context.object
+         t_card.name = f"Title_{name}"
+         t_card.data.body = name.upper()
+         t_card.data.align_x = 'CENTER'
+         t_card.data.align_y = 'CENTER'
+         t_card.scale = (0.4, 0.4, 0.4)
+         t_card.parent = camera
+         t_card.location = (0.0, -3.0, -1.2)
+         t_card.rotation_euler = (math.radians(75), 0, math.radians(180))
+        
+         t_card.hide_viewport = True
+         t_card.hide_render = True
+         t_card.keyframe_insert(data_path="hide_viewport", frame=1)
+         t_card.keyframe_insert(data_path="hide_render", frame=1)
+        
+         t_card.hide_viewport = False
+         t_card.hide_render = False
+         t_card.keyframe_insert(data_path="hide_viewport", frame=start_tour)
+         t_card.keyframe_insert(data_path="hide_render", frame=start_tour)
+        
+         t_card.hide_viewport = True
+         t_card.hide_render = True
+         t_card.keyframe_insert(data_path="hide_viewport", frame=end_tour - 3)
+         t_card.keyframe_insert(data_path="hide_render", frame=end_tour - 3)
+        
+         current_frame = end_tour
 
-                            <span class="text-comment"># Initialize Camera Constraints & Cycles Hardware Engine</span>
-                            bpy.ops.object.camera_add(location=(0, -2.3, 0), rotation=(1.57, 0, 0))
-                            bpy.context.scene.camera = bpy.context.active_object
-                            bpy.context.scene.render.engine = <span class="text-warning">'CYCLES'</span></code></pre>
+      # --- STAGE 3: ZOOM OUT TO FIXED POSITION (Frame 1416 to 1536) ---
+      overview_start = current_frame                  
+      fixed_camera_frame = overview_start + zoom_out_duration  
+    
+      fixed_location = (200.0, -50.0, 140.0) 
+      system_center_pos = (0.0, -10.0, 0.0)
+    
+      camera.location = fixed_location
+      camera.keyframe_insert(data_path="location", frame=fixed_camera_frame)
+    
+      bpy.context.scene.frame_set(fixed_camera_frame)
+      direction = mathutils.Vector(system_center_pos) - camera.location
+      camera.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
+      camera.keyframe_insert(data_path="rotation_euler", frame=fixed_camera_frame)
+    
+      camera.location = fixed_location
+      camera.keyframe_insert(data_path="location", frame=total_finale_frames)
+      camera.keyframe_insert(data_path="rotation_euler", frame=total_finale_frames)
+
+      camera_data.keyframe_insert(data_path="shift_x", frame=1)
+      camera_data.keyframe_insert(data_path="shift_x", frame=total_finale_frames)
+
+      # I-reset ang Cinematic Light para tumama sa gitna ng buong Solar System sa finale
+      bpy.context.scene.frame_set(fixed_camera_frame)
+      finale_light_dir = mathutils.Vector((0, 0, 0)) - mathutils.Vector((100, -200, 150))
+      light_sun.rotation_euler = finale_light_dir.to_track_quat('-Z', 'Y').to_euler()
+      light_sun.keyframe_insert(data_path="rotation_euler", frame=fixed_camera_frame)
+    
+      light_sun.keyframe_insert(data_path="rotation_euler", frame=total_finale_frames)
+
+      # --- STAGE 4: TRUE ACCURATE ORBITAL MOTION SPINNING (Frames 1536 to 2856) ---
+      orbital_speeds = {
+         "Mercury": 4.1, "Venus": 1.6, "Earth": 1.0, "Mars": 0.53,
+         "Jupiter": 0.084, "Saturn": 0.034, "Uranus": 0.012, "Neptune": 0.006, "Pluto": 0.004
+      }
+      moon_relative_speed = 13.4 
+
+      sun_loc = sun.location if sun else mathutils.Vector((0.0, -85.6290, 0.0))
+      earth = bpy.data.objects.get("Earth")
+      moon = bpy.data.objects.get("Moon")
+    
+      if moon and earth:
+         moon_initial_offset = moon.location - earth.location
+         moon_radius = math.sqrt(moon_initial_offset.x**2 + moon_initial_offset.y**2)
+      else:
+         moon_radius = 5.0
+
+      initial_positions = {}
+      for name in body_order:
+         obj = bpy.data.objects.get(name)
+         if obj:
+            initial_positions[name] = obj.location.copy()
+            obj.keyframe_insert(data_path="location", frame=1)
+            obj.keyframe_insert(data_path="location", frame=fixed_camera_frame)
+
+      if moon:
+         moon.keyframe_insert(data_path="location", frame=1)
+         moon.keyframe_insert(data_path="location", frame=fixed_camera_frame)
+
+      step_size = 5
+      for frame in range(fixed_camera_frame, total_finale_frames + 1, step_size):
+         seconds_passed = (frame - fixed_camera_frame) / fps
+        
+         # 1. Planeta Orbits
+         for name in body_order:
+            obj = bpy.data.objects.get(name)
+            if not obj: continue
+            
+            base_loc = initial_positions[name]
+            radius = math.sqrt((base_loc.x - sun_loc.x)**2 + (base_loc.y - sun_loc.y)**2)
+            start_angle = math.atan2(base_loc.y - sun_loc.y, base_loc.x - sun_loc.x)
+            
+            speed_modifier = orbital_speeds[name] * 0.8  
+            current_angle = start_angle + (speed_modifier * seconds_passed)
+            
+            new_x = sun_loc.x + (math.cos(current_angle) * radius)
+            new_y = sun_loc.y + (math.sin(current_angle) * radius)
+            
+            obj.location = (new_x, new_y, base_loc.z)
+            obj.keyframe_insert(data_path="location", frame=frame)
+            
+            if name == "Earth" and moon:
+               earth_current_x = new_x
+               earth_current_y = new_y
+               earth_current_z = base_loc.z
+
+         # 2. Moon Orbit
+         if moon and earth:
+            earth_speed = orbital_speeds["Earth"] * 0.8
+            moon_speed = earth_speed * moon_relative_speed 
+            
+            start_moon_angle = math.atan2(moon_initial_offset.y, moon_initial_offset.x)
+            current_moon_angle = start_moon_angle + (moon_speed * seconds_passed)
+            
+            moon_x = earth_current_x + (math.cos(current_moon_angle) * moon_radius)
+            moon_y = earth_current_y + (math.sin(current_moon_angle) * moon_radius)
+            
+            moon.location = (moon_x, moon_y, earth_current_z)
+            moon.keyframe_insert(data_path="location", frame=frame)
+
+      # 5. INTERPOLATION CLEANUP
+      for name in all_bodies:
+         obj = bpy.data.objects.get(name)
+         if obj and obj.animation_data and obj.animation_data.action:
+            for fcurve in obj.animation_data.action.fcurves:
+               for kp in fcurve.keyframe_points:
+                  if kp.co[0] >= fixed_camera_frame:
+                     kp.interpolation = 'LINEAR'
+                        
+      if camera.animation_data and camera.animation_data.action:
+         for fcurve in camera.animation_data.action.fcurves:
+            for kp in fcurve.keyframe_points:
+               if kp.co[0] < fixed_camera_frame:
+                  kp.interpolation = 'BEZIER'
+                  kp.easing = 'EASE_IN_OUT'
+               else:
+                  kp.interpolation = 'LINEAR'
+
+      # I-set din sa linear ang anggulo ng ilaw para walang pagtalon ng anino
+      if light_sun.animation_data and light_sun.animation_data.action:
+         for fcurve in light_sun.animation_data.action.fcurves:
+            for kp in fcurve.keyframe_points:
+               kp.interpolation = 'LINEAR'
+
+      bpy.context.scene.frame_start = 1
+      bpy.context.scene.frame_end = total_finale_frames
+      bpy.context.scene.frame_current = 1
+    
+      print("Cinematic Lighting System added and configured perfectly!")
+
+   setup_perfect_documentary_choreography() 
+
+   import bpy
+   import math
+   import mathutils
+
+   def setup_perfect_documentary_choreography():
+      camera = bpy.data.objects.get("Camera")
+      if not camera:
+         print("Error: 'Camera' object not found!")
+         return
+    
+      # 1. SETUP LENS (As per your request)
+      camera_data = camera.data
+      camera_data.type = 'PERSP'
+      camera_data.lens = 26.27
+      camera_data.shift_x = -0.150
+      camera_data.clip_end = 2777.0
+    
+      # 2. CLEAR PREVIOUS ANIMATIONS
+      camera.animation_data_clear()
+      body_order = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"]
+    
+      for obj in list(bpy.data.objects):
+         if any(x in obj.name for x in ["Title_", "Cinematic_Sun", "Space_Ambient"]):
+            bpy.data.objects.remove(obj, do_unlink=True)
+            
+      # 3. LIGHTING RIG
+      light_data = bpy.data.lights.new("Cinematic_Sun_Data", 'SUN')
+      light_sun = bpy.data.objects.new("Cinematic_Sun", light_data)
+      bpy.context.collection.objects.link(light_sun)
+      light_data.energy = 8.0
+    
+      # 4. TIMING MANAGEMENT (5 SECONDS PER PLANET)
+      fps = 24
+      hold_time = 5 * fps    # 120 frames bawat planeta
+      transition_time = 48   # 2 segundo para sa paglipat
+    
+      current_frame = 24 # Magsimula pagkatapos ng 1 segundong delay
+    
+      # 5. PLANETARY TOUR LOOP
+      for name in body_order:
+         obj = bpy.data.objects.get(name)
+         if not obj: continue
+            
+         start_shot = current_frame
+         end_shot = start_shot + hold_time
+        
+         # Framing: Dynamic distance base sa laki ng planeta
+         max_dim = max(obj.dimensions)
+         cam_dist = max_dim * 4.5
+         loc = obj.location
+        
+         # Camera Animation (Dahan-dahang paggalaw habang naka-focus)
+         camera.location = (loc.x + cam_dist, loc.y - cam_dist, loc.z + cam_dist * 0.3)
+         camera.keyframe_insert("location", frame=start_shot)
+        
+         camera.location = (loc.x + cam_dist * 0.8, loc.y + cam_dist * 0.2, loc.z + cam_dist * 0.2)
+         camera.keyframe_insert("location", frame=end_shot)
+        
+         # Camera Tracking & Light Sync
+         for f in [start_shot, end_shot]:
+            bpy.context.scene.frame_set(f)
+            camera.rotation_euler = (loc - camera.location).to_track_quat('-Z', 'Y').to_euler()
+            camera.keyframe_insert("rotation_euler", frame=f)
+            
+            # Sun light rotates to maintain cinematic side-lighting
+            light_sun.rotation_euler = camera.rotation_euler
+            light_sun.keyframe_insert("rotation_euler", frame=f)
+            
+         # Text Card Overlay
+         bpy.ops.object.text_add(location=(0,0,0))
+         t = bpy.context.object
+         t.name = f"Title_{name}"
+         t.data.body = name.upper()
+         t.parent = camera
+         t.location = (0, -3, -1.2)
+         t.scale = (0.4, 0.4, 0.4)
+        
+         t.hide_render = True
+         t.keyframe_insert("hide_render", frame=start_shot - 1)
+         t.hide_render = False
+         t.keyframe_insert("hide_render", frame=start_shot)
+         t.hide_render = True
+         t.keyframe_insert("hide_render", frame=end_shot)
+        
+         current_frame = end_shot + transition_time
+
+      print(f"Tour sequence updated. All planets processed with 5s hold time.")
+
+   setup_perfect_documentary_choreography()</code></pre>
                      </div>
                   </div>
                </div>

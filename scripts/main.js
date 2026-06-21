@@ -21,6 +21,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-code-btn');
+
+    const normalizeCodeBlock = (sourceText) => {
+        const lines = sourceText.replace(/\r\n/g, '\n').split('\n');
+        while (lines.length && lines[0].trim() === '') lines.shift();
+        while (lines.length && lines[lines.length - 1].trim() === '') lines.pop();
+
+        const indentationLevels = lines
+            .filter(line => line.trim().length > 0)
+            .map(line => (line.match(/^[ \t]*/) || [''])[0].length);
+        const commonIndent = indentationLevels.length ? Math.min(...indentationLevels) : 0;
+
+        return lines
+            .map(line => line.slice(commonIndent))
+            .join('\n');
+    };
+
+    copyButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const targetId = button.getAttribute('data-copy-target');
+            const codeElement = targetId ? document.getElementById(targetId) : null;
+            if (!codeElement) return;
+
+            const codeText = normalizeCodeBlock(codeElement.textContent || '');
+
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(codeText);
+                } else {
+                    const tempTextArea = document.createElement('textarea');
+                    tempTextArea.value = codeText;
+                    tempTextArea.setAttribute('readonly', '');
+                    tempTextArea.style.position = 'absolute';
+                    tempTextArea.style.left = '-9999px';
+                    document.body.appendChild(tempTextArea);
+                    tempTextArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempTextArea);
+                }
+                const originalText = button.textContent.trim();
+                button.textContent = 'Copied';
+                button.disabled = true;
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }, 1200);
+            } catch (error) {
+                console.error('Copy failed:', error);
+            }
+        });
+    });
+});
 // ================= CUTE STAR LOADING SCREEN =================
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
@@ -180,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <div class="planet-card-video" style="border-radius:2rem 2rem 0 0;overflow:hidden;">
                                             <video autoplay loop muted playsinline preload="metadata" style="width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a1a;display:block;">
                                                 <source src="assets/Planets/${planet.video}.webm" type="video/webm">
-                                                <source src="assets/Planets/${planet.video}.mkv" type="video/mkv">
+                                                <source src="assets/Planets/${planet.video}.mp4" type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
                                         </div>
