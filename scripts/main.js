@@ -223,6 +223,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- Card Rendering ---
         const grid = document.getElementById('planet-card-grid');
         if (grid) {
+                const buildVideoMarkup = (baseName) => `
+                                            <video class="planet-card-video-player" autoplay loop muted playsinline preload="metadata" data-video-base="${baseName}" style="width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a1a;display:block;">
+                                                <source src="assets/Planets/${baseName}.webm" type="video/webm">
+                                                <source src="assets/Planets/${baseName}.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            `;
+
                 function renderCards(EarthYears) {
                         grid.innerHTML = PLANETS.map(planet => {
                                 const age = EarthYears / planet.orbitalPeriod;
@@ -231,11 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="col">
                                     <div class="planet-card h-100 d-flex flex-column p-0" style="background:rgba(30,20,50,0.98);border-radius:2rem;box-shadow:0 0 32px #a78bfa77,0 0 16px #ff5ecb77;border:2.5px solid #a78bfa;overflow:hidden;">
                                         <div class="planet-card-video" style="border-radius:2rem 2rem 0 0;overflow:hidden;">
-                                            <video autoplay loop muted playsinline preload="metadata" style="width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a1a;display:block;">
-                                                <source src="assets/Planets/${planet.video}.webm" type="video/webm">
-                                                <source src="assets/Planets/${planet.video}.mp4" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
+                                            ${buildVideoMarkup(planet.video)}
                                         </div>
                                         <div class="p-4 d-flex flex-column flex-grow-1">
                                             <div class="d-flex align-items-center justify-content-between mb-2">
@@ -289,6 +293,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 form && form.addEventListener('submit', () => renderCards(getEarthYears()));
                 // Initial render
                 renderCards(getEarthYears());
+
+                const attachVideoFallbacks = () => {
+                    document.querySelectorAll('.planet-card-video-player').forEach(video => {
+                        if (video.dataset.fallbackBound === 'true') return;
+                        video.dataset.fallbackBound = 'true';
+
+                        const sources = [
+                            { src: `assets/Planets/${video.dataset.videoBase}.webm`, type: 'video/webm' },
+                            { src: `assets/Planets/${video.dataset.videoBase}.mp4`, type: 'video/mp4' }
+                        ];
+
+                        const trySource = (index) => {
+                            if (index >= sources.length) return;
+                            const source = sources[index];
+                            video.pause();
+                            video.removeAttribute('src');
+                            video.load();
+                            video.src = source.src;
+                            video.type = source.type;
+                            video.load();
+
+                            const onError = () => {
+                                video.removeEventListener('error', onError);
+                                trySource(index + 1);
+                            };
+
+                            const onCanPlay = () => {
+                                video.removeEventListener('canplay', onCanPlay);
+                                video.removeEventListener('error', onError);
+                            };
+
+                            video.addEventListener('error', onError, { once: true });
+                            video.addEventListener('canplay', onCanPlay, { once: true });
+                        };
+
+                        trySource(0);
+                    });
+                };
+
+                attachVideoFallbacks();
         }
 });
 /* jshint esversion: 6 */
