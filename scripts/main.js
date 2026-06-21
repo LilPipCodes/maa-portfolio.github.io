@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const grid = document.getElementById('planet-card-grid');
         if (grid) {
                 const buildVideoMarkup = (baseName) => `
-                                            <video class="planet-card-video-player" autoplay loop muted playsinline preload="metadata" data-video-base="${baseName}" style="width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a1a;display:block;">
+                                            <video class="planet-card-video-player" autoplay loop muted playsinline preload="metadata" data-video-base="${baseName}" poster="assets/Planets/${baseName}.jpg" style="width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a1a;display:block;">
                                                 <source src="assets/Planets/${baseName}.webm" type="video/webm">
                                                 <source src="assets/Planets/${baseName}.mp4" type="video/mp4">
                                                 Your browser does not support the video tag.
@@ -295,6 +295,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderCards(getEarthYears());
 
                 const attachVideoFallbacks = () => {
+                    const makeFallbackUI = (video) => {
+                        const base = video.dataset.videoBase;
+                        const container = document.createElement('div');
+                        container.className = 'video-fallback d-flex flex-column align-items-center justify-content-center';
+                        container.style.padding = '1rem';
+                        container.style.background = '#070617';
+                        container.style.borderRadius = '0.6rem';
+
+                        const posterSrc = video.getAttribute('poster') || `assets/Planets/${base}.jpg`;
+                        const img = document.createElement('img');
+                        img.src = posterSrc;
+                        img.alt = base + ' poster';
+                        img.style.maxWidth = '100%';
+                        img.style.borderRadius = '0.5rem';
+                        img.style.marginBottom = '0.75rem';
+
+                        const msg = document.createElement('div');
+                        msg.textContent = 'Video unavailable — click to download.';
+                        msg.style.color = '#e2d9ff';
+                        msg.style.marginBottom = '0.5rem';
+
+                        const dl = document.createElement('a');
+                        dl.href = `assets/Planets/${base}.mp4`;
+                        dl.className = 'btn btn-asset w-100';
+                        dl.textContent = 'Download MP4';
+                        dl.style.display = 'inline-block';
+
+                        container.appendChild(img);
+                        container.appendChild(msg);
+                        container.appendChild(dl);
+
+                        video.parentNode.replaceChild(container, video);
+                    };
+
                     document.querySelectorAll('.planet-card-video-player').forEach(video => {
                         if (video.dataset.fallbackBound === 'true') return;
                         video.dataset.fallbackBound = 'true';
@@ -305,13 +339,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         ];
 
                         const trySource = (index) => {
-                            if (index >= sources.length) return;
+                            if (index >= sources.length) {
+                                // all failed — show fallback
+                                makeFallbackUI(video);
+                                return;
+                            }
                             const source = sources[index];
                             video.pause();
                             video.removeAttribute('src');
-                            video.load();
+                            // remove existing <source> tags so load() will fetch new src
+                            Array.from(video.querySelectorAll('source')).forEach(s => s.remove());
+
+                            const newSource = document.createElement('source');
+                            newSource.src = source.src;
+                            newSource.type = source.type;
+                            video.appendChild(newSource);
+
+                            // set src directly for browsers that prefer it
                             video.src = source.src;
-                            video.type = source.type;
                             video.load();
 
                             const onError = () => {
@@ -322,6 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             const onCanPlay = () => {
                                 video.removeEventListener('canplay', onCanPlay);
                                 video.removeEventListener('error', onError);
+                                // autoplay if allowed
+                                video.play().catch(()=>{});
                             };
 
                             video.addEventListener('error', onError, { once: true });
@@ -333,6 +380,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 attachVideoFallbacks();
+
+                // Smooth-scroll for internal resources link
+                document.querySelectorAll('a[href="#downloadables"]').forEach(a => {
+                    a.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.getElementById('downloadables');
+                        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
+                });
         }
 });
 /* jshint esversion: 6 */
@@ -449,5 +505,59 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(el);
         }
     });
+
+    // ================= BLENDER SCRIPT MODAL =================
+    const openBtn = document.getElementById('open-script-modal-btn');
+    const closeBtn = document.getElementById('close-script-modal-btn');
+    const closeBtnX = document.getElementById('close-script-modal');
+    const modal = document.getElementById('script-modal');
+    const backdrop = document.getElementById('script-modal-backdrop');
+    const modalCodeEl = document.getElementById('blender-script-template-modal');
+    const sourceCodeEl = document.getElementById('blender-script-template');
+
+    if (openBtn && modal && backdrop) {
+        const openModal = () => {
+            // Copy source code to modal
+            if (sourceCodeEl && modalCodeEl) {
+                modalCodeEl.textContent = sourceCodeEl.textContent;
+            }
+            modal.style.display = 'flex';
+            backdrop.style.display = 'block';
+            // Trigger fade-in
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                backdrop.style.opacity = '1';
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = () => {
+            modal.style.opacity = '0';
+            backdrop.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                backdrop.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        };
+
+        openBtn.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (closeBtnX) closeBtnX.addEventListener('click', closeModal);
+
+        // Close on backdrop click
+        backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                closeModal();
+            }
+        });
+    }
 
 });
