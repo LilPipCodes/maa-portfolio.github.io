@@ -300,15 +300,14 @@
                                         <div class="deck-badge small font-monospace" style="background:linear-gradient(90deg,#ff5ecb,#a78bfa);color:#fff;padding:0.2em 0.9em;border-radius:1em;box-shadow:0 0 8px #ff5ecb77;">1080p HD</div>
                                     </div>
                                     <div class="ratio ratio-16x9 position-relative" style="background:radial-gradient(ellipse at 60% 40%,#a78bfa22 0%,#ff5ecb11 100%);">
-                                        <video 
-                                            class="render-native-player" 
-                                            controls 
-                                            preload="metadata" 
-                                            poster="assets/Rotoscope/final-thumb.jpg"
-                                            style="border-radius:1.1rem;box-shadow:0 0 24px #ff5ecb33;">
-                                            <source src="assets/Rotoscope/final-output.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                        <iframe
+                                            class="render-native-player"
+                                            src="https://www.youtube.com/embed/P8-O9r9ht_o"
+                                            title="Final Rotoscoping Output"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen
+                                            style="border-radius:1.1rem;box-shadow:0 0 24px #ff5ecb33; width:100%; height:100%; border:0;">
+                                        </iframe>
                                     </div>
                                     <div class="render-progress-bar w-100" style="height:6px;background:linear-gradient(90deg,#a78bfa,#ff5ecb);box-shadow:0 0 12px #ff5ecb77;opacity:0.7;"></div>
                                     <div class="row g-3 m-0 py-3 font-monospace text-white-50 small justify-content-between align-items-center" style="background:rgba(80,40,120,0.10);">

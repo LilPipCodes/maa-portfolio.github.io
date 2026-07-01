@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 149.6,
                 desc: 'Earth is the only known world with life, liquid water, and a protective atmosphere. Its magnetic field shields the biosphere from solar wind.',
                 funFact: 'Earth is the densest planet in the solar system.',
-                youtubeUrl: 'https://youtu.be/-qozCqLA-O4',
+                youtubeUrl: 'https://youtu.be/u16uKsDoq0Q',
                 video: 'earth'
             },
             {
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 227.9,
                 desc: 'Mars is a cold desert with polar ice caps and the largest volcano. Its thin atmosphere is mostly CO₂.',
                 funFact: 'Mars has the tallest volcano in the solar system—Olympus Mons.',
-                youtubeUrl: 'https://youtu.be/mzrHB4uy_c0',
+                youtubeUrl: 'https://youtu.be/61C6OUzJ7X4',
                 video: 'mars'
             },
             {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 778.5,
                 desc: 'Jupiter is the largest planet, a gas giant with a Great Red Spot storm and dozens of moons. Its gravity shapes the solar system.',
                 funFact: 'Jupiter has at least 95 moons—the most of any planet!',
-                youtubeUrl: 'https://youtu.be/o11ZH0i-Otc',
+                youtubeUrl: 'https://youtu.be/q7Lc97wtx2M',
                 video: 'jupiter'
             },
             {
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 1434,
                 desc: 'Saturn is famous for its rings of ice and rock. Its low density means it would float in water.',
                 funFact: 'Saturn’s rings are mostly made of water ice and are only about 30 feet thick!',
-                youtubeUrl: 'https://youtu.be/6DQ2G2Klj4U',
+                youtubeUrl: 'https://youtu.be/oiEqJkS74ss',
                 video: 'saturn'
             },
             {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 2871,
                 desc: 'Uranus spins on its side, causing extreme seasons. Its blue-green color comes from methane in its atmosphere.',
                 funFact: 'Uranus has 13 known rings and 27 known moons.',
-                youtubeUrl: 'https://youtu.be/46_3zWrZZ24',
+                youtubeUrl: 'https://youtu.be/jQQ4xFGFH4o',
                 video: 'uranus'
             },
             {
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 distance: 4495,
                 desc: 'Neptune is a windy ice giant with supersonic storms. Its deep blue color is due to methane and unknown atmospheric components.',
                 funFact: 'Neptune’s winds can reach up to 2,100 km/h—the fastest in the solar system.',
-                youtubeUrl: 'https://youtu.be/JRQa-LcRVQI',
+                youtubeUrl: 'https://youtu.be/mJ3H3GOjAwI',
                 video: 'neptune'
             },
             {
