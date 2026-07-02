@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 desc: 'Pluto is a dwarf planet in the Kuiper Belt, known for its eccentric orbit and icy surface.',
                 funFact: 'Pluto has five known moons, the largest is Charon.',
                 moonFact: 'Pluto and Charon are so close in size that they orbit a point between them, like a double world.',
-                youtubeUrl: 'https://youtu.be/iAxt1amjpYc',
+                youtubeUrl: 'https://youtu.be/Zxu8L4J04uc',
                 video: 'pluto'
             }
         ];
